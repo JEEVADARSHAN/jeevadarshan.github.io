@@ -1,0 +1,76 @@
+
+.roadmap-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Container for the roadmap */
+.education-roadmap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Roadmap Container */
+.roadmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+    /* Vertical Line Styling */
+    .roadmap-container::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        border-left: 2px solid #007BFF;
+        z-index: -1;
+    }
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Timeline Marker Styling */
+.timeline-marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #007BFF;
+    border: 3px solid white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Content Styling for each item */
+.timeline-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    /* Timeline Item Heading */
+    .timeline-content h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    /* Timeline Item Paragraph */
+    .timeline-content p {
+        font-size: 1rem;
+        color: #555;
+    }

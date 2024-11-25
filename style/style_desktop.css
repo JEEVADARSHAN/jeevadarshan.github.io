@@ -372,9 +372,6 @@ body {
     width: 90%;
 }
 
-.progress-line._5 span {
-    width: 75%;
-}
 
 .progress-line::after {
     position: absolute;
@@ -402,10 +399,6 @@ body {
 
 .progress-line._4::after {
     content: "90";
-}
-
-.progress-line._5::after {
-    content: "75";
 }
 
 .progress-line::before {
@@ -520,7 +513,7 @@ body {
 }
 .project-contents {
     display: grid;
-    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+    grid-template-columns: repeat(3, minmax(15rem, 1fr));
     align-items: center;
     grid-gap: 4rem;
     margin-top: 0.5rem;
@@ -561,11 +554,11 @@ body {
     transition: height 0.5s;
 }
 
-    .layer h5 {
+    .layer h3 {
         color: #000;
-        font-size: 1.4rem;
         font-weight: 600;
-        margin-bottom: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .layer p{
@@ -596,8 +589,31 @@ body {
 }
 
 
-
-
+.contact {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    width: calc(100% - 1rem);
+    display: flex;
+}
+.contact-txt {
+    flex: 0 0 50%;
+    margin-top: 4rem;
+    padding-left: 5rem;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-form {
+    flex: 0 0 50%;
+    margin-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
 
 @media only screen and (min-width: 1280px) {
     h1 {

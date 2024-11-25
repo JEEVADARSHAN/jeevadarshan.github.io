@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style_desktop.css" />
-    <link rel="stylesheet" href="style_mobile.css" media="screen and (max-width: 768px)" />
-    <link rel="stylesheet" href="widgets.css" />
-    <link rel="stylesheet" href="animation.css" />
+    <link rel="stylesheet" href="style/style_desktop.css" />
+    <link rel="stylesheet" href="style/style_mobile.css" media="screen and (max-width: 768px)" />
+    <link rel="stylesheet" href="utils/widgets.css" />
+    <link rel="stylesheet" href="utils/animation.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    
+    <link rel="icon" href="assets/portfolio.png" type="image/x-icon">
 </head>
 
 
@@ -51,6 +51,17 @@
         </nav>
     </header>
 
+
+    <div class="lottie" style=" top: 10px; right: 10px;">
+        <lottie-player src="assets/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+    <div class="lottie" style=" top: 20rem; left: 50px;">
+        <lottie-player src="assets/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+    <div class="lottie" style=" top: 55rem; right: 5rem;">
+        <lottie-player src="assets/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+
     <!-- HOME -->
 
     <section class="home" id="home">
@@ -68,7 +79,7 @@
                 </a>
                 <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;"><i class='bx bxl-github'></i></a>
             </div>
-            <a href="#" class="btn-box">More About Me</a>
+            <a href="#about" class="btn-box">More About Me</a>
         </div>
 
         <span class="home-imgHover"></span>
@@ -90,7 +101,7 @@
                 <br>Through my studies and extracurricular involvement in various events, I've developed strong skills in design, analysis, and critical thinking.
                 I'm excited to continue learning and eager to contribute to the future of engineering.
             </p>
-            <a href="#" class="btn-box">More About Me</a>
+            <a href="about.html" class="btn-box">More About Me</a>
         </div>
     </section>
 
@@ -164,7 +175,7 @@
                             </div>
                         </div>
                         <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">3D Modeling & Simulation:</a>
+                            <a style="padding-bottom: 0.6rem; display: block;">Additive Manufacturing</a>
                             <div class="info">
                             </div>
                             <div class="progress-line _2">
@@ -172,7 +183,7 @@
                             </div>
                         </div>
                         <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">Additive Manufacturing</a>
+                            <a style="padding-bottom: 0.6rem; display: block;">Research & Data Analysis</a>
                             </i>
                             <div class="info">
                             </div>
@@ -181,19 +192,11 @@
                             </div>
                         </div>
                         <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">Research & Data Analysis</a></i>
+                            <a style="padding-bottom: 0.6rem; display: block;">Coding</a></i>
                             <div class="info">
 
                             </div>
                             <div class="progress-line _4">
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">Coding</a></i>
-                            <div class="info">
-                            </div>
-                            <div class="progress-line _5">
                                 <span></span>
                             </div>
                         </div>
@@ -260,7 +263,7 @@
             <div class="row">
                 <img src="assets/prototype.svg">
                 <div class="layer">
-                    <h5>3D Printed Mechanical Part Prototype</h5>
+                    <h3>3D Printed Mechanical Part Prototype</h3>
                     <p>
                         Designed and 3D printed a functional prototype for a mechanical part to be used in an automotive application.
                         Focused on optimizing strength-to-weight ratio and minimizing material usage through careful design and FDM printing techniques.
@@ -271,7 +274,7 @@
             <div class="row">
                 <img src="assets/assembly.svg">
                 <div class="layer">
-                    <h5>CAD Model of an Automated Assembly Line</h5>
+                    <h3>CAD Model of an Automated Assembly Line</h3>
                     <p>
                         Created a detailed 3D CAD model for a conceptual automated assembly line.
                         Integrated various mechanical systems and ensured the design was efficient, with a focus on reducing cycle time and increasing productivity.
@@ -282,7 +285,7 @@
             <div class="row">
                 <img src="assets/cad.svg">
                 <div class="layer">
-                    <h5>Design and Simulation of a Heat Exchanger System</h5>
+                    <h3>Design and Simulation of a Heat Exchanger System</h3>
                     <p>
                         Led the design and simulation of a heat exchanger system using SolidWorks.
                         Focused on optimizing the heat transfer efficiency while ensuring the design met material and cost constraints.
@@ -294,7 +297,7 @@
             <div class="row">
                 <img src="assets/researching-animate.png">
                 <div class="layer">
-                    <h5>Research Paper on Additive Manufacturing in Aerospace</h5>
+                    <h3>Research Paper on Additive Manufacturing</h3>
                     <p>
                         Conducted a comprehensive research project on the use of additive manufacturing in aerospace applications.
                         Focused on material properties, cost-effectiveness, and design flexibility in 3D printed parts for aircraft systems.
@@ -309,7 +312,53 @@
 
     <!-- CONTACT -->
 
-    <section>
+    <section id="contact">
+
+        <div style="width: 100%; text-align: center;">
+            <h1 class="animate" data-animation="slideRight"> Contact<span>Me</span></h1>
+        </div>
+
+        <section class="contact">
+
+            <div class="contact-txt">
+                <h4 class="animate" data-animation="slideRight">Get in <span>touch</span></h4>
+                <div>
+                    <p class="animate" data-animation="slideTop" style="margin-top: 2rem; margin-right: 1rem;">
+                        I'd love to hear from you! Whether you have a project in mind, want to discuss potential collaborations, or simply want to connect, feel free to reach out.
+                        I'm always open to new opportunities and creative ideas.
+                    </p>
+                </div>
+            </div>
+            <form action="send-email.php" method="POST" class="contact-form">
+                <div class="contact-content">
+                    <label for="name" class="contact-label"></label>
+                    <input type="text" class="contact-input" name="name" required placeholder="Name">
+                </div>
+
+                <div class="contact-content">
+                    <label for="email" class="contact-label"></label>
+                    <input type="email" class="contact-input" name="email" required placeholder="E-mail">
+                </div>
+
+                <div class="contact-content">
+                    <label for="subject" class="contact-label"></label>
+                    <input type="text" class="contact-input" name="subject" required placeholder="Subject">
+                </div>
+
+                <div class="contact-content">
+                    <label for="message" class="contact-label"></label>
+                    <textarea class="contact-input" name="message" required placeholder="Describe your message or inquiry"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn-img">
+                        Send message
+                        <i class='bx bx-send'></i>
+                    </button>
+                </div>
+            </form>
+
+        </section>
     </section>
 
     <div style="width: 100%; display: flex; justify-content: flex-end;">
@@ -331,7 +380,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

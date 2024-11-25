@@ -90,5 +90,18 @@
         margin-top: 0.5rem;
         padding: 1rem;
     }
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-txt {
+        padding-left: 1rem;
+        position: relative;
+    }
 
+    .contact-form {
+        margin-top: 2rem;
+        width: 100%;
+    }
 }
