@@ -12,6 +12,8 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <link rel="icon" href="assets/portfolio.png" type="image/x-icon">
 </head>
 
@@ -21,7 +23,7 @@
 
     <!-- HEADER -->
 
-    <header class="header">
+    <header class="header desktop-header">
         <a href="#" class="h1">Portfolio</a>
 
         <nav class="navbar">
@@ -34,31 +36,37 @@
         </nav>
     </header>
 
-    <header class="header">
+    <header class="header mobile-header">
         <a href="#" class="h1">Portfolio</a>
 
-        <div class="hamburger" style="color:white" id="hamburger-icon">
-            <i class='bx bx-menu'></i>
-        </div>
+        <!-- Replace hamburger menu with checkbox-based solution -->
+        <input type="checkbox" id="navi-toggle" class="checkbox" />
+        <label for="navi-toggle" class="button">
+            <span class="icon">&nbsp;</span>
+        </label>
+        <div class="background">&nbsp;</div>
 
-        <nav class="navbar" id="navbar">
-            <a href="#home" style="--i:1;" class="active">Home</a>
-            <a href="#about" style="--i:2;">About</a>
-            <a href="#services" style="--i:3;">Services</a>
-            <a href="#skills" style="--i:4;">Skills</a>
-            <a href="#project" style="--i:4;">Project</a>
-            <a href="#contact" style="--i:5;">Contact</a>
+        <!-- New nav structure -->
+        <nav class="nav">
+            <ul class="list">
+                <li class="item"> <a href="#home" class="link">Home</a> </li>
+                <li class="item"> <a href="#about" class="link">About</a> </li>
+                <li class="item"> <a href="#services" class="link">Services</a> </li>
+                <li class="item"> <a href="#skills" class="link">Skills</a> </li>
+                <li class="item"> <a href="#project" class="link">Project</a> </li>
+                <li class="item"> <a href="#contact" class="link">Contact</a> </li>
+            </ul>
         </nav>
     </header>
 
 
-    <div class="lottie" style=" top: 10px; right: 10px;">
+    <div class="lottie" style=" top: 10px; right: 10px; width: 25%;">
         <lottie-player src="assets/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
     </div>
-    <div class="lottie" style=" top: 20rem; left: 50px;">
+    <div class="lottie" style=" top: 20rem; left: 50px; width: 25%;">
         <lottie-player src="assets/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
     </div>
-    <div class="lottie" style=" top: 55rem; right: 5rem;">
+    <div class="lottie" style=" top: 55rem; right: 5rem; width: 25%;">
         <lottie-player src="assets/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
     </div>
 
@@ -78,10 +86,13 @@
                     <i class='bx bxl-linkedin'></i>
                 </a>
                 <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;"><i class='bx bxl-github'></i></a>
+                <a href="mailto:jeevadarshan11@gmail.com" style="--i:9;"><i class='bx bxl-gmail'></i></a>
             </div>
             <a href="#about" class="btn-box">More About Me</a>
         </div>
-
+        <div id="model" class="model">
+            <canvas id="modelCanvas"></canvas>
+        </div>
         <span class="home-imgHover"></span>
     </section>
 
@@ -313,7 +324,6 @@
     <!-- CONTACT -->
 
     <section id="contact">
-
         <div style="width: 100%; text-align: center;">
             <h1 class="animate" data-animation="slideRight"> Contact<span>Me</span></h1>
         </div>
@@ -329,25 +339,26 @@
                     </p>
                 </div>
             </div>
-            <form action="php/send-email.php" method="POST" class="contact-form">
+
+            <form id="contactForm" class="contact-form" onsubmit="sendEmail(event)">
                 <div class="contact-content">
                     <label for="name" class="contact-label"></label>
-                    <input type="text" class="contact-input" name="name" required placeholder="Name">
+                    <input type="text" class="contact-input" id="name" name="name" required placeholder="Name">
                 </div>
 
                 <div class="contact-content">
                     <label for="email" class="contact-label"></label>
-                    <input type="email" class="contact-input" name="email" required placeholder="E-mail">
+                    <input type="email" class="contact-input" id="email" name="email" required placeholder="E-mail">
                 </div>
 
                 <div class="contact-content">
                     <label for="subject" class="contact-label"></label>
-                    <input type="text" class="contact-input" name="subject" required placeholder="Subject">
+                    <input type="text" class="contact-input" id="subject" name="subject" required placeholder="Subject">
                 </div>
 
                 <div class="contact-content">
                     <label for="message" class="contact-label"></label>
-                    <textarea class="contact-input" name="message" required placeholder="Describe your message or inquiry"></textarea>
+                    <textarea class="contact-input" id="message" name="message" required placeholder="Describe your message or inquiry"></textarea>
                 </div>
 
                 <div>
@@ -361,11 +372,17 @@
         </section>
     </section>
 
+
+    <!--   CREDITS   -->
+
     <div style="width: 100%; display: flex; justify-content: flex-end;">
         <p style="margin: 0; margin-bottom: 0.5rem; padding-right:0.5rem; ">
             Illustrations by <a href="https://storyset.com" target="_blank" rel="noopener noreferrer" style="color: white;">Storyset</a>
         </p>
     </div>
+
+    <!--   FOOTER   -->
+
     <footer class="footer">
 
         <h2 class="animate" data-animation="showText">Let's <span>Connect</span></h2>
@@ -374,12 +391,13 @@
                 <i class='bx bxl-linkedin'></i>
             </a>
             <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;"><i class='bx bxl-github'></i></a>
+            <a target="_top" href="mailto:jeevadarshan11@gmail.com" style="--i:9;"><i class='bx bxl-gmail'></i></a>
         </div>
         <div>
             <p style="width: 100%; margin-bottom: 1rem;">© 2024 Jeevadarshan G. All rights reserved. </p>
         </div>
     </footer>
-
+    <button id="scrollToTopBtn"><i class='bx bx-chevrons-up'></i></button>
     <script src="js/main.js"></script>
 </body>
 
