@@ -8,6 +8,29 @@ var typed = new Typed(".text", {
     loop: true
 })
 
+
+// ================= MENU ====================
+
+document.addEventListener('click', function (event) {
+    const checkbox = document.querySelector('#navi-toggle');
+    const menuContainer = document.querySelector('.background');
+    const navLinks = document.querySelectorAll('.link');
+
+    
+    if (menuContainer.contains(event.target)) {
+        checkbox.checked = false; 
+    }
+   
+    navLinks.forEach(link => {
+        if (link.contains(event.target)) {
+            checkbox.checked = false; 
+        }
+    });
+    
+});
+
+
+
 // ================= Scroll ====================
 
 window.onscroll = () => {
@@ -193,5 +216,4 @@ function initModel() {
 }
 
 window.onload = initModel;
-
-
+AOS.init();

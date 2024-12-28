@@ -1,0 +1,72 @@
+@media screen and (max-width: 768px) {
+
+
+    .section-education {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-half {
+        position: relative;
+        width: 100%;
+        padding-top: 4rem;
+    }
+
+        .left-half.bg.bottom,
+        .left-half.bg.fixed {
+            visibility: hidden;
+        }
+
+    .right-half.white {
+        background-color: transparent;
+        margin-top: 0.25rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline-container {
+        margin: 1rem;
+        border-left: none; /* Remove left border on mobile */
+    }
+
+    .timeline-item {
+        padding-left: 0; /* Remove padding for left border */
+        margin-bottom: 20px;
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .timeline-circle {
+        display: none; /* Remove circle on mobile */
+    }
+
+    .timeline-content {
+        padding-left: 10px; /* Reduce padding */
+        width: 100%; /* Ensure content takes full width */
+        box-shadow: none; /* Remove shadow for simplicity */
+        border-left: none; /* Remove left border */
+        border-top: 3px solid #007bff; /* Add border on top for mobile view */
+        margin-top: 10px; /* Space out content a bit */
+    }
+
+    .timeline-logo img {
+        width: 80px; /* Smaller logo size for mobile */
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    .timeline-title {
+        font-size: 18px; /* Adjust font size for title */
+    }
+
+    .timeline-role {
+        font-size: 14px; /* Smaller font for role */
+    }
+
+    .timeline-highlights {
+        font-size: 12px; /* Smaller font for highlights */
+    }
+
+    .timeline-description {
+        font-size: 12px; /* Smaller font for description */
+    }
+}

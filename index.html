@@ -39,14 +39,12 @@
     <header class="header mobile-header">
         <a href="#" class="h1">Portfolio</a>
 
-        <!-- Replace hamburger menu with checkbox-based solution -->
         <input type="checkbox" id="navi-toggle" class="checkbox" />
         <label for="navi-toggle" class="button">
             <span class="icon">&nbsp;</span>
         </label>
         <div class="background">&nbsp;</div>
 
-        <!-- New nav structure -->
         <nav class="nav">
             <ul class="list">
                 <li class="item"> <a href="#home" class="link">Home</a> </li>
@@ -82,12 +80,13 @@
                 Combining my engineering expertise with coding and app development, I create innovative solutions that push the boundaries of design and functionality.
             </p>
             <div class="home-sci">
-                <a href="https://www.linkedin.com/in/jeevadarshan-g/" style="--i:7;">
+                <a href="https://www.linkedin.com/in/jeevadarshan-g/" style="--i:7;" data-id="Linkedin">
                     <i class='bx bxl-linkedin'></i>
                 </a>
-                <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;"><i class='bx bxl-github'></i></a>
-                <a href="mailto:jeevadarshan11@gmail.com" style="--i:9;"><i class='bx bxl-gmail'></i></a>
+                <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;" data-id="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="mailto:jeevadarshan11@gmail.com" style="--i:9;" data-id="Gmail"><i class='bx bxl-gmail'></i></a>
             </div>
+
             <a href="#about" class="btn-box">More About Me</a>
         </div>
         <div id="model" class="model">
@@ -267,53 +266,57 @@
 
     <section class="projects" id="project">
 
-        <div style="width: 100%; text-align: center;">
-            <h1 class="animate" data-animation="slideRight"> Latest<span>Project</span></h1>
-        </div>
-        <div class="project-contents">
-            <div class="row">
-                <img src="assets/prototype.svg">
-                <div class="layer">
-                    <h3>3D Printed Mechanical Part Prototype</h3>
-                    <p>
-                        Designed and 3D printed a functional prototype for a mechanical part to be used in an automotive application.
-                        Focused on optimizing strength-to-weight ratio and minimizing material usage through careful design and FDM printing techniques.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
-                </div>
+        <div style="width: 100%;">
+            <div style="text-align: center;">
+                <h1 class="animate" data-animation="slideRight"> Latest<span>Project</span></h1>
             </div>
-            <div class="row">
-                <img src="assets/assembly.svg">
-                <div class="layer">
-                    <h3>CAD Model of an Automated Assembly Line</h3>
-                    <p>
-                        Created a detailed 3D CAD model for a conceptual automated assembly line.
-                        Integrated various mechanical systems and ensured the design was efficient, with a focus on reducing cycle time and increasing productivity.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="assets/cad.svg">
-                <div class="layer">
-                    <h3>Design and Simulation of a Heat Exchanger System</h3>
-                    <p>
-                        Led the design and simulation of a heat exchanger system using SolidWorks.
-                        Focused on optimizing the heat transfer efficiency while ensuring the design met material and cost constraints.
 
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+
+            <div class="project-contents">
+                <div class="row">
+                    <img src="assets/prototype.svg">
+                    <div class="layer">
+                        <h3>3D Printed Mechanical Part Prototype</h3>
+                        <p>
+                            Designed and 3D printed a functional prototype for a mechanical part to be used in an automotive application.
+                            Focused on optimizing strength-to-weight ratio and minimizing material usage through careful design and FDM printing techniques.
+                        </p>
+                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <img src="assets/researching-animate.png">
-                <div class="layer">
-                    <h3>Research Paper on Additive Manufacturing</h3>
-                    <p>
-                        Conducted a comprehensive research project on the use of additive manufacturing in aerospace applications.
-                        Focused on material properties, cost-effectiveness, and design flexibility in 3D printed parts for aircraft systems.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                <div class="row">
+                    <img src="assets/assembly.svg">
+                    <div class="layer">
+                        <h3>CAD Model of an Automated Assembly Line</h3>
+                        <p>
+                            Created a detailed 3D CAD model for a conceptual automated assembly line.
+                            Integrated various mechanical systems and ensured the design was efficient, with a focus on reducing cycle time and increasing productivity.
+                        </p>
+                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="assets/cad.svg">
+                    <div class="layer">
+                        <h3>Design and Simulation of a Heat Exchanger System</h3>
+                        <p>
+                            Led the design and simulation of a heat exchanger system using SolidWorks.
+                            Focused on optimizing the heat transfer efficiency while ensuring the design met material and cost constraints.
+
+                        </p>
+                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="assets/researching-animate.png">
+                    <div class="layer">
+                        <h3>Research Paper on Additive Manufacturing</h3>
+                        <p>
+                            Conducted a comprehensive research project on the use of additive manufacturing in aerospace applications.
+                            Focused on material properties, cost-effectiveness, and design flexibility in 3D printed parts for aircraft systems.
+                        </p>
+                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -372,6 +375,8 @@
         </section>
     </section>
 
+
+    <div class="blank-box"></div>
 
     <!--   CREDITS   -->
 

@@ -31,6 +31,7 @@ body {
     background: #081b29;
 }
 
+
 .animate {
     opacity: 0;
 }
@@ -64,7 +65,7 @@ body {
     background: #001b29;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0px -50px 43px white;
 }
 
@@ -187,9 +188,9 @@ body {
     .home-sci a:hover {
         background: #0ef;
         color: #001b29;
-        box-shadow: 0 0 clamp(10px, 1.5rem, 20px) cyan,
-            0 0 clamp(20px, 3rem, 40px) cyan;
+        box-shadow: 0 0 clamp(10px, 1.5rem, 15px) cyan, 0 0 clamp(15px, 3rem, 20px) cyan;
     }
+
 
 .model {
     z-index: 10;
@@ -523,6 +524,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding-top: 5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 .project-contents {
     display: grid;
