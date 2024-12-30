@@ -1,6 +1,6 @@
 @media screen and (max-width: 768px) {
 
-
+    /*  EDUCATION  */
     .section-education {
         display: flex;
         flex-direction: column;
@@ -26,14 +26,30 @@
 
     .timeline-container {
         margin: 1rem;
-        border-left: none; /* Remove left border on mobile */
+        border-left: none;
     }
 
     .timeline-item {
         padding-left: 0; /* Remove padding for left border */
-        margin-bottom: 20px;
+        margin-bottom: 0;
         flex-direction: column; /* Stack items vertically */
     }
+        .timeline-item::after {
+            height: 4rem;
+            background: cyan;
+            content: " ";
+            color: white;
+            width: 5px;
+            margin-bottom: 0;
+        }
+        .timeline-item::before {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #fff;
+            content: " ";
+            color: white;
+        }
 
     .timeline-circle {
         display: none; /* Remove circle on mobile */
@@ -44,8 +60,7 @@
         width: 100%; /* Ensure content takes full width */
         box-shadow: none; /* Remove shadow for simplicity */
         border-left: none; /* Remove left border */
-        border-top: 3px solid #007bff; /* Add border on top for mobile view */
-        margin-top: 10px; /* Space out content a bit */
+        border-top: 3px solid #007bff;
     }
 
     .timeline-logo img {
@@ -69,4 +84,115 @@
     .timeline-description {
         font-size: 12px; /* Smaller font for description */
     }
+
+
+
+    /*  EXPERIENCE  */
+
+    .tl {
+        flex-direction: column;
+        height: auto;
+        min-width: 300px;
+        margin: 0;
+        justify-content: flex-start;
+    }
+
+    /* Adjust timeline box styles for vertical layout */
+    .tl-box {
+        width: 80%; /* Make boxes wider on mobile */
+        margin: 20px auto; /* Center the items */
+        position: relative;
+    }
+
+        /* Adjust date circle for mobile */
+        .tl-box .tl-date {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: bold;
+            position: absolute;
+            top: -30px; /* Position it above the content */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Change the timeline content to be in a column layout */
+        .tl-box .tl-content {
+            width: 100%; /* Make content take full width */
+            position: relative;
+            padding: 20px;
+            text-align: left;
+            margin-top: 20px; /* Space between date and content */
+        }
+
+    /* Remove the position adjustments for the content */
+    .tl-bottom .tl-content,
+    .tl-top .tl-content {
+        position: relative;
+        top: auto; /* Remove top/bottom positioning */
+        transform: none;
+    }
+
+    /* Adjust the content arrow to fit vertical timeline */
+    .tl-content::before {
+        visibility: hidden;
+    }
+
+        /* Adjust timeline line to be vertical */
+        .tl .tl-line {
+        width: 3px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4a4a4a;
+        position: absolute;
+    }
+
+    /* Adjust the timeline content box for better alignment */
+    .tl-box:nth-child(odd) .tl-content {
+        margin-left: 50px; /* Offset odd items for visual distinction */
+    }
+
+    .tl-box:nth-child(even) .tl-content {
+        margin-right: 50px; /* Offset even items for visual distinction */
+    }
+    
+    
+    
+    /*  SKILL  */
+
+    #skill {
+        padding: 0.5rem;
+    }
+    .skill {
+        grid-template-areas: 'one two two three three four'
+            'five five six three three four'
+            'five five eight eight nine nine'
+            'seven seven eight eight nine nine';
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .child {
+        border-radius: 8px;
+    }
+    .child img {
+        object-fit: contain;
+        max-height: 80%;
+        max-width: 80%;
+        padding: 0rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

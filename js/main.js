@@ -216,4 +216,3 @@ function initModel() {
 }
 
 window.onload = initModel;
-AOS.init();
