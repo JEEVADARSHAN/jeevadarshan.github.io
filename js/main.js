@@ -1,14 +1,3 @@
-// ================= Typer ====================
-
-var typed = new Typed(".text", {
-    strings: ["CAD Enthusiastic", "Python Developer", "Researcher"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true
-})
-
-
 // ================= MENU ====================
 
 document.addEventListener('click', function (event) {
@@ -100,7 +89,7 @@ progressBars.forEach(bar => observer_graphs.observe(bar));
 radialBars.forEach(bar => observer_graphs.observe(bar));
 
 
-// ================= Mail ====================
+// ================= Scroll Button ====================
 
 
 let scrollButton = document.getElementById("scrollToTopBtn");
@@ -215,6 +204,16 @@ function initModel() {
     }
 }
 
+
+// ================= Typer ====================
+
+var typed = new Typed(".text", {
+    strings: ["CAD Enthusiastic", "Python Developer", "Researcher"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+})
+
 window.onload = initModel;
-document.querySelectorAll('*').forEach(el => el.setAttribute('draggable', 'false'));
 

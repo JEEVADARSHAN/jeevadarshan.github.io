@@ -120,12 +120,7 @@
         padding: 0.5rem;
     }
     .skill {
-        grid-template-areas: 'one two two three three four'
-            'five five six three three four'
-            'five five eight eight nine nine'
-            'seven seven eight eight nine nine';
-        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
     }
     .child {
         border-radius: 8px;

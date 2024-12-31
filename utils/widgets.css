@@ -19,6 +19,25 @@
         box-shadow: 0 0 5px aqua, 0 0 25px cyan, 0 0 25px aliceblue;
     }
 
+.btn-box-sm {
+    display: inline-block;
+    padding: 5px 10px;
+    background: cyan;
+    border-radius: 8px;
+    font-size: clamp(10px, 1rem, 1.5rem);
+    color: #001b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+}
+
+    .btn-box-sm:hover {
+        box-shadow: 0 0 5px aqua, 0 0 25px cyan, 0 0 25px aliceblue;
+    }
+
 
 
 /*========== SCROLL BUTTON ==========*/
