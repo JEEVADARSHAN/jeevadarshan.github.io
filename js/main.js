@@ -216,3 +216,5 @@ function initModel() {
 }
 
 window.onload = initModel;
+document.querySelectorAll('*').forEach(el => el.setAttribute('draggable', 'false'));
+

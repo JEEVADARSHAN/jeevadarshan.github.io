@@ -50,12 +50,6 @@
             background: #081b29;
         }
 
-    .left-half h1 {
-        text-shadow: -1px -1px 0 cyan, 1px -1px 0 cyan, 1px 1px 0 cyan, 1px 1px 0 cyan;
-    }
-
-
-
 .right-half.white {
     left: 50%;
     overflow: auto;
@@ -224,125 +218,106 @@
 /*  EXPERIENCE TIMELINE   */
 
 
-.tl {
-    position: relative;
+
+.tl-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-areas:
+        "one . three ."
+        "five six seven eight "
+        ". two . four";
     width: 100%;
-    margin: auto;
-    height: 550px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0rem 0.5rem 0rem 0.5rem;
-}
-
-    
-    .tl .tl-line {
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #4a4a4a; 
-    }
-
-.tl-box {
+    height: auto;
+    background-color: transparent;
     position: relative;
-    width: 20%;
-    min-height: 35%;
-    text-align: justify;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+    padding: 1rem 1rem 0 1rem;
     align-items: center;
+    justify-items: center;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    color: black;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-    
-    .tl-box .tl-date {
-        position: relative;
-        top: 0;
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-        background: #000;
-        border: 3px solid #00b0bd; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: black; 
-        font-weight: bold;
+    .grid-item:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 clamp(10px, 1.5rem, 15px) cyan, 0 0 clamp(15px, 3rem, 20px) cyan;
     }
 
+.line {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    background-color: #99FFFF;
+    height: 5px;
+    width: 100%;
+    position: relative;
+}
 
-    .tl-box .tl-content {
-        border-radius: 10px;
-        background-color: ghostwhite;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        padding: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+.tl-date {
+    width: auto;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 16px;
+    background: black;
+    border: 2px solid cyan;
+    position: relative;
+    z-index: 100;
+    padding: 1rem;
+    transition: ease all 0.5s;
+}
+    .tl-date:hover {
+        transform: scale(0.9);
+        background: cyan;
         color: black;
-        border-right: 5px solid #00b0bd;
-        border-left: 5px solid #00b0bd;
+        box-shadow: 0 0 clamp(10px, 1.5rem, 15px) cyan, 0 0 clamp(15px, 3rem, 20px) cyan;
     }
 
-.tl-bottom .tl-content {
-    top: 70%;
+.tl-dt-top,
+.tl-dt-bottom {
 }
-
-.tl-top .tl-content {
-    top: 20%;
-}
-
-.tl-content::before {
-    content: " ";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 10px solid transparent;
-}
-
-.tl-bottom .tl-content::before {
-    border-bottom-color: white;
-    top: -20px;
-}
-
-.tl-top .tl-content::before {
-    border-top-color: white;
-    bottom: -20px;
-}
-
-.tl-box:nth-child(odd) .tl-content {
-    bottom: 75%; 
-}
-
-.tl-box:nth-child(even) .tl-content {
-    top: 75%;
-}
-
-.tl-content::before {
-    content: " ";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 10px solid transparent;
-}
-
-.tl-box:nth-child(odd) .tl-content::before {
-    border-top-color: #00b0bd;
-    bottom: -20px;
-}
-
-.tl-box:nth-child(even) .tl-content::before {
-    border-bottom-color: #00b0bd;
-    top: -20px;
-}
+    .tl-dt-top::before {
+        border-radius: 2px;
+        height: 20px;
+        width: 4px;
+        background: aqua;
+        content: " ";
+        position: relative;
+        display: block;
+        left: 50%;
+    }
+    .tl-dt-bottom::after {
+        border-radius: 2px;
+        height: 20px;
+        width: 4px;
+        background: aqua;
+        content: " ";
+        position: relative;
+        display: block;
+        left: 50%;
+    }
 
 
+#one1 {grid-area: one;}
+#two2 {grid-area: two;}
+#three3 {grid-area: three;}
+#four4 {grid-area: four;}
+#five5 {grid-area: five;}
+#six6 {grid-area: six;}
+#seven7 {grid-area: seven;}
+#eight8 {grid-area: eight;}
 
 
 /*  SKILLS   */
@@ -354,11 +329,16 @@
     display: grid;
     gap: 5px;
     height: auto;
-    grid-template-areas: 'one two two three three four'
-                         'five five six three three four'
-                         'five five eight eight nine nine'
-                         'seven seven eight eight nine nine';
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+        'one two two three three four'
+        'five five six three three four'
+        'five five eight eight nine nine'
+        'seven seven eight eight twelve twelve'
+
+        'ten eleven thirteen thirteen twelve twelve'
+        'fourteen eleven eighteen sixteen sixteen seventeen'
+        'fourteen fifteen fifteen sixteen sixteen seventeen';
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 2fr 1fr;
     grid-template-columns: repeat(6, 1fr);
     background: linear-gradient(45deg,#1fa2ff, #12d8fa, #a6ffcb);
     margin-top: 2rem;
@@ -373,7 +353,7 @@
     backdrop-filter: blur(9.6px);
     -webkit-backdrop-filter: blur(9.6px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-
+    text-align: center;
     width: 100%;
     height: 100%;
     display: grid;
@@ -384,7 +364,7 @@
 
 .child img{
     max-height: 5rem;
-    max-width: 8rem;
+    max-width: 7rem;
     padding: 0rem;
 }
 
@@ -427,6 +407,41 @@
     grid-area: nine;
 }
 
+#ten {
+    grid-area: ten;
+}
+
+#eleven {
+    grid-area: eleven;
+}
+
+#twelve {
+    grid-area: twelve;
+}
+
+#thirteen {
+    grid-area: thirteen;
+}
+
+#fourteen {
+    grid-area: fourteen;
+}
+
+#fifteen {
+    grid-area: fifteen;
+}
+
+#sixteen {
+    grid-area: sixteen;
+}
+
+#seventeen {
+    grid-area: seventeen;
+}
+#eighteen {
+    grid-area: eighteen;
+}
+
 
 
 
@@ -454,13 +469,18 @@
     gap: 30px;
 }
 
-.container li {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    min-height: 30%;
+    .container li {
+        position: relative;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        min-height: 30%;
+        transition: all ease 0.6s;
+    }
+.container li:hover{
+    transform: scale(1.1);
 }
 
 .cert-image {

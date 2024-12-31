@@ -89,79 +89,33 @@
 
     /*  EXPERIENCE  */
 
-    .tl {
-        flex-direction: column;
-        height: auto;
-        min-width: 300px;
-        margin: 0;
-        justify-content: flex-start;
+    .tl-grid {
+        grid-template-columns: 0.5fr 1.5fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            "five one "
+            "six two"
+            "seven three"
+            "eight four";
+        gap: 10px;
+    }
+    
+    .line{
+        grid-column: 1;
+        grid-row: 1/ span 4;
+        height: 100%;
+        width: 5px;
     }
 
-    /* Adjust timeline box styles for vertical layout */
-    .tl-box {
-        width: 80%; /* Make boxes wider on mobile */
-        margin: 20px auto; /* Center the items */
-        position: relative;
-    }
-
-        /* Adjust date circle for mobile */
-        .tl-box .tl-date {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-weight: bold;
-            position: absolute;
-            top: -30px; /* Position it above the content */
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Change the timeline content to be in a column layout */
-        .tl-box .tl-content {
-            width: 100%; /* Make content take full width */
-            position: relative;
-            padding: 20px;
-            text-align: left;
-            margin-top: 20px; /* Space between date and content */
-        }
-
-    /* Remove the position adjustments for the content */
-    .tl-bottom .tl-content,
-    .tl-top .tl-content {
-        position: relative;
-        top: auto; /* Remove top/bottom positioning */
-        transform: none;
-    }
-
-    /* Adjust the content arrow to fit vertical timeline */
-    .tl-content::before {
+    .tl-dt-top::before,
+    .tl-dt-bottom::after {
         visibility: hidden;
     }
 
-        /* Adjust timeline line to be vertical */
-        .tl .tl-line {
-        width: 3px;
-        height: 100%;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #4a4a4a;
-        position: absolute;
-    }
 
-    /* Adjust the timeline content box for better alignment */
-    .tl-box:nth-child(odd) .tl-content {
-        margin-left: 50px; /* Offset odd items for visual distinction */
-    }
 
-    .tl-box:nth-child(even) .tl-content {
-        margin-right: 50px; /* Offset even items for visual distinction */
-    }
-    
-    
-    
+
     /*  SKILL  */
-
     #skill {
         padding: 0.5rem;
     }
