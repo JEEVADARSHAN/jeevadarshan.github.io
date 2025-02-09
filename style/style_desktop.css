@@ -619,6 +619,7 @@ img {
 .contact {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+    padding-top: 5rem;
     width: calc(100% - 1rem);
     display: flex;
 }

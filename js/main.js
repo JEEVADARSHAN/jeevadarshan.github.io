@@ -153,7 +153,7 @@ function initModel() {
 
     
     const objLoader = new THREE.OBJLoader();
-    objLoader.load('assets/j.obj', function (object) {
+    objLoader.load('assets/3d_models/j.obj', function (object) {
         scene.add(object);
 
       
