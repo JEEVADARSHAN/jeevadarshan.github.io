@@ -1,7 +1,7 @@
 <h1 align="center" id="title">My Portfolio</h1>
 
 
-<p align="center"><img src="https://socialify.git.ci/jeevadarshan/jeevadarshan.github.io/image?forks=1&amp;issues=1&amp;logo=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5603AQHDRQi0aVQecw%2Fprofile-displayphoto-shrink_200_200%2Fprofile-displayphoto-shrink_200_200%2F0%2F1697854202996%3Fe%3D1744848000%26v%3Dbeta%26t%3Dm9FrYrsHjok3Z3KsD1UEo7domrkq7q58vmNjn60Z_kk&amp;name=1&amp;owner=1&amp;pattern=Charlie+Brown&amp;pulls=1&amp;stargazers=1&amp;theme=Auto" alt="project-image"></p>
+<p align="center"><img src="[https://socialify.git.ci/jeevadarshan/jeevadarshan.github.io/image?forks=1&amp;issues=1&amp;logo=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5603AQHDRQi0aVQecw%2Fprofile-displayphoto-shrink_200_200%2Fprofile-displayphoto-shrink_200_200%2F0%2F1697854202996%3Fe%3D1744848000%26v%3Dbeta%26t%3Dm9FrYrsHjok3Z3KsD1UEo7domrkq7q58vmNjn60Z_kk&amp;name=1&amp;owner=1&amp;pattern=Charlie+Brown&amp;pulls=1&amp;stargazers=1&amp;theme=Auto](https://socialify.git.ci/jeevadarshan/jeevadarshan.github.io/image?forks=1&amp;issues=1&amp;logo=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5603AQHDRQi0aVQecw%2Fprofile-displayphoto-shrink_200_200%2Fprofile-displayphoto-shrink_200_200%2F0%2F1697854202996%3Fe%3D1744848000%26v%3Dbeta%26t%3Dm9FrYrsHjok3Z3KsD1UEo7domrkq7q58vmNjn60Z_kk&amp;name=1&amp;owner=1&amp;pattern=Charlie+Brown&amp;pulls=1&amp;stargazers=1&amp;theme=Auto)" alt="project-image"></p>
 
 
 <p id="description">Welcome to my responsive portfolio website! This project is designed to showcase my skills projects and achievements using HTML CSS and JavaScript. The website is mobile-friendly ensuring a great user experience across devices.</p>
