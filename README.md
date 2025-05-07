@@ -1,6 +1,6 @@
 <h1 align="center" id="title">My Portfolio</h1>
 
-<img src="https://socialify.git.ci/JEEVADARSHAN/jeevadarshan.github.io/image?forks=1&issues=1&name=1&owner=1&pattern=Charlie+Brown&pulls=1&stargazers=1&theme=Light" alt="jeevadarshan.github.io" width="640" height="320" />
+<img src="https://socialify.git.ci/JEEVADARSHAN/jeevadarshan.github.io/image?forks=1&issues=1&name=1&owner=1&pattern=Charlie+Brown&pulls=1&stargazers=1&theme=Light" alt="jeevadarshan.github.io" width="100%" height="100%" />
 
 
 <p id="description">Welcome to my responsive portfolio website! This project is designed to showcase my skills projects and achievements using HTML CSS and JavaScript. The website is mobile-friendly ensuring a great user experience across devices.</p>
