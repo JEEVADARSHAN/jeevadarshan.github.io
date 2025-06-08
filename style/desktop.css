@@ -1,0 +1,519 @@
+/*========== HEADER SECTION ==========*/
+.desktop-header {
+    display: flex;
+}
+.mobile-header {
+    display: none;
+}
+
+/*========== HOME SECTION ==========*/
+.home {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    flex-direction: row;
+}
+
+/*========== ABOUT SECTION ==========*/
+#about {
+    display: flex;
+    flex-direction: row;
+}
+.about-img {
+    flex: 0 0 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/*========== SERVICE SECTION ==========*/
+#services{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    justify-items: center;
+}
+.service-list {
+    display: flex;
+    grid-gap: 4rem;
+    margin-top: 4rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+    .service-list div {
+        background: #081b29;
+        flex: 1;
+        border-right: 10px;
+        border-radius: 20px;
+        transition: background 0.5s, transform 1s ease;
+        border: 1px solid white;
+        justify-items: center;
+        z-index: 2;
+        padding: 1rem;
+        transition: all 0.4s;
+    }
+
+    .service-list div i {
+        font-size: 4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: aqua;
+    }
+
+    .service-list div h2 {
+        margin-bottom: 2rem;
+    }
+
+    .service-list div p {
+        text-align: start;
+        margin: 0rem;
+        text-align: justify;
+    }
+
+        .service-list div:hover {
+            border: 1px solid cyan;
+        }
+
+
+/*========== SKILLS SECTION ==========*/
+#skills {
+    padding-top: 5rem;
+    overflow-x: clip;
+}
+    #skills h5 {
+        text-align: start;
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+    }
+    #skills .carousal {
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+#skill .grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.glass-bx {
+    padding: 2rem;
+    margin: 1rem;
+    padding-bottom: 0rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.25s;
+}
+.glass-bx:hover{
+    transform: scale(1.005);
+}
+
+.bar {
+    font-size: 0.8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.25s;
+}
+.bar:hover{
+    transform: scale(1.025);
+}
+.bar .title{
+    display: flex;
+    gap: 0.5rem;
+    padding-bottom: 0.6rem;
+    align-items: center;
+}
+.bar .title p{
+    font-size: 0.6rem;
+    font-weight: 500;
+}
+.bar img{
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+}
+
+.Technical-bars {
+    width: 23vw;
+}
+
+.Technical-bars .bar {
+    margin-top: 2rem 0;
+}
+
+.Technical-bars .bars:first-child {
+    margin-top: 0;
+}
+
+.Technical-bars .bars:last-child {
+    margin-bottom: 0;
+}
+
+.Technical-bars .bars .info {
+    margin-bottom: 2rem;
+}
+
+    .Technical-bars .bars .info span {
+        font-weight: 500;
+        animation: showText 0.5s 1s linear forwards;
+        opacity: 0;
+    }
+
+.progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 92%;
+    height: 5px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+
+    .progress-line span {
+        height: 100%;
+        background-color: cyan;
+        position: absolute;
+        border-radius: 10px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1s cubic-bezier(1, 0, 0.5, 1);
+    }
+
+
+    .progress-line.in-view {
+        transform: scaleX(1);
+    }
+
+        .progress-line.in-view span {
+            transform: scaleX(1);
+        }
+
+    .progress-line._1 span {
+        width: 90%;
+    }
+
+    .progress-line._2 span {
+        width: 80%;
+    }
+
+    .progress-line._3 span {
+        width: 85%;
+    }
+
+    .progress-line._4 span {
+        width: 90%;
+    }
+    .progress-line._5 span {
+        width: 50%;
+    }
+    .progress-line._6 span {
+        width: 60%;
+    }
+    .progress-line._7 span {
+        width: 70%;
+    }
+
+    .progress-line::after {
+        position: absolute;
+        background-color: #000;
+        padding-left: 0.2rem;
+        padding: 0.1rem;
+        color: #fff;
+        animation: showText 0.5s 1.5s linear forwards;
+        opacity: 0;
+        top: -10px;
+        right: -20px;
+    }
+
+    .progress-line._1::after {
+        content: "90";
+    }
+
+    .progress-line._2::after {
+        content: "80";
+    }
+
+    .progress-line._3::after {
+        content: "85";
+    }
+
+    .progress-line._4::after {
+        content: "90";
+    }
+    .progress-line._5::after {
+        content: "50";
+    }
+
+    .progress-line._6::after {
+        content: "60";
+    }
+
+    .progress-line._7::after {
+        content: "70";
+    }
+
+    .progress-line::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 7px solid transparent;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+        border-top-color: #000;
+        animation: showText 0.5s 1.5s linear forwards;
+        opacity: 0;
+    }
+
+.radial-bars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+    .radial-bars .radial-bar {
+        width: 50%;
+        height: 10rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        fill: transparent;
+        align-content: center;
+    }
+
+        .radial-bars .radial-bar svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 120px;
+            height: 160px;
+        }
+
+        .radial-bars .radial-bar.in-view .progress-bar {
+            stroke-width: 10;
+            stroke: black;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+            stroke-dashoffset: -1;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+.path {
+    stroke-width: 10;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+
+
+.radial-bar.in-view .path-1 {
+    animation: animate-path1 1s 1s linear forwards;
+}
+
+.radial-bar.in-view .path-2 {
+    animation: animate-path2 1s 1s linear forwards;
+}
+
+.radial-bar.in-view .path-3 {
+    animation: animate-path3 1s 1s linear forwards;
+}
+
+.radial-bar.in-view .path-4 {
+    animation: animate-path4 1s 1s linear forwards;
+}
+
+.radial-bar .percentage {
+    opacity: 0;
+}
+
+.radial-bar.in-view .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: 500;
+    animation: showText 0.5s 2s linear forwards;
+    opacity: 0;
+}
+
+.radial-bar .text {
+    opacity: 0;
+}
+
+.radial-bar.in-view .text {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: -5px;
+    transform: translateX(-0px);
+    font-weight: 500;
+    animation: showText 0.5s 2s linear forwards;
+    opacity: 0;
+}
+
+/*========== PROJECT SECTION ==========*/
+#project {
+    padding-top: 5rem;
+}
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    transition: all 0.5s;
+    aspect-ratio: 1/1;
+}
+#project .grid {
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+    .project img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+        object-fit: contain;
+        transition: transform 0.5s;
+        aspect-ratio: 1/1;
+    }
+    .project::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: var(--bg-image);
+        background-size: cover;
+        filter: blur(10px);
+        z-index: -1;
+        border-radius: 8px;
+    }
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.65), aqua);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    margin-top: 0.5rem;
+    transition: height 0.5s;
+}
+
+    .layer h3 {
+        color: #000;
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.0rem;
+    }
+
+    .layer p {
+        margin: 0rem;
+        color: #000;
+        text-align: justify;
+        font-size: 0.7rem;
+    }
+
+    .layer i {
+        color: aqua;
+        margin-top: 20px;
+        font-size: 20px;
+        background: #e0e0e0;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+.project:hover {
+    transform: scale(1.1);
+}
+
+.project:hover .layer {
+    height: 100%;
+}
+
+
+/*========== CONTACT SECTION ==========*/
+#contact {
+    padding-top: 5rem;
+}
+.contact {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    width: calc(100% - 1rem);
+    display: flex;
+}
+
+.contact-txt {
+    flex: 0 0 50%;
+    margin-top: 4rem;
+    padding-left: 5rem;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form {
+    flex: 0 0 50%;
+    margin-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+
+
+
+@media only screen and (min-width: 1280px) {
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+
+

@@ -1,3 +1,32 @@
+.animate {
+    opacity: 0;
+    will-change: auto;
+}
+
+    .animate.in-view.slideRight {
+        animation: slideRight 1s ease forwards;
+    }
+
+    .animate.in-view.slideLeft {
+        animation: slideLeft 1s ease forwards;
+    }
+
+    .animate.in-view.slideTop {
+        animation: slideTop 1s ease forwards;
+    }
+
+    .animate.in-view.slideBottom {
+        animation: slideBottom 1s ease forwards;
+    }
+
+    .animate.in-view.showText {
+        animation: showText 0.5s linear forwards;
+    }
+
+    .animate.in-view.animate-bar {
+        animation: animate-bar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    }
+
 @keyframes rotateImage {
     from {
         transform: rotate(0deg);

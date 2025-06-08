@@ -14,8 +14,11 @@
     <meta name="theme-color" content="#081b29">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="stylesheet" href="style/style_desktop.css" />
-    <link rel="stylesheet" href="style/style_mobile.css" media="screen and (max-width: 768px)" />
+    <link rel="canonical" href="https://jeevadarshan.github.io/">
+
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/desktop.css" />
+    <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)" />
     <link rel="stylesheet" href="utils/widgets.css" />
     <link rel="stylesheet" href="utils/animation.css" />
     <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
@@ -37,7 +40,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Jeevadarshan | Web Developer Portfolio" />
     <meta name="twitter:description" content="Explore modern web projects by Jeevadarshan, combining code and creativity." />
-    <meta name="twitter:image" content="https://jeevadarshan.github.io/assets/other/Portfolio.png" />
+    <meta name="twitter:image" content="https://jeevadarshan.github.io/assets/other/Photo.jpg" />
 
     <script type="application/ld+json">
         {
@@ -46,7 +49,7 @@
            "name": "Jeevadarshan",
            "url": "https://jeevadarshan.github.io/",
            "description": "Responsive Portfolio of Jeevadarshan, a mechanical engineer",
-           "image": "https://jeevadarshan.github.io/assets/other/Portfolio.png",
+           "image": "https://jeevadarshan.github.io/assets/other/Photo.jpg",
            "sameAs": [
              "http://www.linkedin.com/in/jeevadarshan-g",
              "http://github.com/JEEVADARSHAN"
@@ -64,199 +67,341 @@
     <!-- HEADER -->
 
     <header class="header desktop-header">
+        <!-- DESKTOP -->
         <a href="#" class="h1" style="font-family: 'Tangerine', cursive;">Jeevadarshan</a>
 
         <nav class="navbar">
-            <a href="#home" style="--i:1;" class="active">Home</a>
+            <a href="#home" style="--i:1;">Home</a>
             <a href="#about" style="--i:2;">About</a>
             <a href="#services" style="--i:3;">Services</a>
             <a href="#skills" style="--i:4;">Skills</a>
-            <a href="#project" style="--i:4;">Project</a>
-            <a href="#contact" style="--i:5;">Contact</a>
+            <a href="#project" style="--i:5;">Project</a>
+            <a href="#contact" style="--i:6;">Contact</a>
         </nav>
     </header>
 
     <header class="header mobile-header">
         <a href="#" class="h1" style="font-family: 'Tangerine', cursive;">Jeevadarshan</a>
-
+        <!-- MOBILE -->
         <input type="checkbox" id="navi-toggle" class="checkbox" />
         <label for="navi-toggle" class="button">
             <span class="icon">&nbsp;</span>
         </label>
-        <div class="background">&nbsp;</div>
+        <div class="menu">
+            <br />
+            <a href="../#home" style="--i:1;">Home</a>
+            <a href="../#about" style="--i:2;">About</a>
+            <a href="../#services" style="--i:3;">Services</a>
+            <a href="../#skills" style="--i:4;">Skills</a>
+            <a href="../#project" style="--i:5;">Project</a>
+            <a href="../#contact" style="--i:6;">Contact</a>
+            <div style="text-align: center;">
+                <br />
+                <div class="logo">
+                    <img src="../assets/other/Photo.jpg" alt="Logo" class="footer-logo" />
+                    <div style="display:flex; flex-direction: column;">
+                        <h2>Let's Connect</h2>
+                    </div>
+                </div>
+                <br />
+                <div class="icons animate" data-animation="slideLeft">
+                    <a href="https://www.github.com/JEEVADARSHAN"><i class='bx bxs-phone'></i></a>
+                    <a href="https://www.linkedin.com/in/jeevadarshan-g/"><i class='bx bxl-linkedin'></i></a>
+                    <a target="_top" href="mailto:jeevadarshan11@gmail.com"><i class='bx bxl-gmail'></i></a>
+                </div>
+                <p>&copy;2025 All rights reserved.</p>
+            </div>
+        </div>
 
-        <nav class="nav">
-            <ul class="list">
-                <li class="item"> <a href="#home" class="link">Home</a> </li>
-                <li class="item"> <a href="#about" class="link">About</a> </li>
-                <li class="item"> <a href="#services" class="link">Services</a> </li>
-                <li class="item"> <a href="#skills" class="link">Skills</a> </li>
-                <li class="item"> <a href="#project" class="link">Project</a> </li>
-                <li class="item"> <a href="#contact" class="link">Contact</a> </li>
-            </ul>
-        </nav>
     </header>
 
 
-    <div class="lottie" style=" top: 10px; right: 10px; width: 25%;">
-        <lottie-player src="assets/other/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
-    </div>
-    <div class="lottie" style=" top: 20rem; left: 50px; width: 25%;">
-        <lottie-player src="assets/other/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
-    </div>
-    <div class="lottie" style=" top: 55rem; right: 5rem; width: 25%;">
-        <lottie-player src="assets/other/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
-    </div>
+    <main>
 
-    <!-- HOME -->
+        <!-- BACKGROUND GEARS-->
+        <div class="lottie" style=" top: 10px; right: 10px; width: 25%;">
+            <lottie-player src="assets/other/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+        <div class="lottie" style=" top: 20rem; left: 50px; width: 25%;">
+            <lottie-player src="assets/other/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+        <div class="lottie" style=" top: 55rem; right: 5rem; width: 25%;">
+            <lottie-player src="assets/other/gears.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, It's Me</h3>
-            <h1>Jeevadarsan G</h1>
-            <h3>And I'm a <span class="text"></span></h3>
-            <p>
-                I am a passionate and creative Mechanical Engineering student with a focus on 3D modeling, problem-solving, and cutting-edge technologies.
-                Combining my engineering expertise with coding and app development, I create innovative solutions that push the boundaries of design and functionality.
-            </p>
-            <div class="home-sci">
-                <a href="https://www.linkedin.com/in/jeevadarshan-g/" style="--i:7;" data-id="Linkedin">
-                    <i class='bx bxl-linkedin'></i>
-                </a>
-                <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;" data-id="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="mailto:jeevadarshan11@gmail.com" style="--i:9;" data-id="Gmail"><i class='bx bxl-gmail'></i></a>
+        <!-- HOME -->
+
+        <section class="full home" id="home">
+            <div class="left">
+                <h3 class="animate" data-animation="slideBottom">Hello, It's Me</h3>
+                <h2 class="animate"data-animation="slideRight">Jeevadarsan G</h2>
+                <h3 class="animate"data-animation="slideTop">And I'm a <span class="text"></span></h3>
+                <br/>
+                <br/>
+                <p class="animate"data-animation="slideTop">
+                    I am a passionate and creative Mechanical Engineering student with a focus on 3D modeling, problem-solving, and cutting-edge technologies.
+                    Combining my engineering expertise with coding and app development, I create innovative solutions that push the boundaries of design and functionality.
+                </p>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/jeevadarshan-g/" style="--i:7;" data-id="Linkedin">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;" data-id="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="mailto:jeevadarshan11@gmail.com" style="--i:9;" data-id="Gmail"><i class='bx bxl-gmail'></i></a>
+                </div>
+
+                <a href="#about" class="animate btn-box" data-animation="slideTop">More About Me</a>
             </div>
+            <div id="model" class="right model">
+                <canvas id="modelCanvas"></canvas>
+            </div>
+            <span class="home-imgHover"></span>
+        </section>
 
-            <a href="#about" class="btn-box">More About Me</a>
-        </div>
-        <div id="model" class="model">
-            <canvas id="modelCanvas"></canvas>
-        </div>
-        <span class="home-imgHover"></span>
-    </section>
 
-    <div class="blank-box"></div>
+        <!-- ABOUT -->
 
-    <!-- ABOUT -->
+        <section class="full about" id="about">
+            <div class="left about-img">
+                <img src="assets/other/Neon1.png" class="img1" alt="About Me">
+                <img src="assets/other/Photo.jpg" class="img2"alt="Jeevadarshan">
+            </div>
+            <div class="right">
+                <h2 class="animate" data-animation="slideRight">About<span> Me</span></h2>
+                <br />
+                <br />
+                <p class="animate" data-animation="slideTop">
+                    I'm Jeevadarshan G, a Mechanical Engineering student at Chennai Institute of Technology with a strong passion for problem-solving and innovation.
+                    I'm particularly interested in robotics, renewable energy, or mechanical design and I enjoy applying my knowledge through hands-on projects and teamwork.
+                    <br /><br />Through my studies and extracurricular involvement in various events, I've developed strong skills in design, analysis, and critical thinking.
+                    I'm excited to continue learning and eager to contribute to the future of engineering.
+                </p>
 
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="assets/other/Neon1.png" class="img1" alt="About Me">
-            <img src="assets/other/Portfolio.png" alt="Jeevadarshan" class="img2">
-        </div>
-        <div class="about-text">
-            <h2 class="animate" data-animation="slideRight">About<span> Me</span></h2>
-            <p class="animate" data-animation="slideTop">
-                I'm Jeevadarshan G, a Mechanical Engineering student at Chennai Institute of Technology with a strong passion for problem-solving and innovation.
-                I'm particularly interested in robotics, renewable energy, or mechanical design and I enjoy applying my knowledge through hands-on projects and teamwork.
-                <br>Through my studies and extracurricular involvement in various events, I've developed strong skills in design, analysis, and critical thinking.
-                I'm excited to continue learning and eager to contribute to the future of engineering.
-            </p>
-            <a href="about.html" class="btn-box">More About Me</a>
-        </div>
-    </section>
+                <br />
+                <br />
 
-    <div class="blank-box"></div>
+                <a href="about.html" class="btn-box">More About Me</a>
+            </div>
+        </section>
 
-    <!-- SERVICES -->
 
-    <section class="services" id="services">
-        <h1 class="animate" data-animation="slideRight">My <span>Services</span></h1>
-        <div class="service-text">
-            <div class="services-list">
+        <!-- SERVICES -->
+
+        <section id="services">
+            <h1 class="animate" data-animation="slideRight">My <span>Services</span></h1>
+            <div class="service-list">
+                
                 <div class="animate" data-animation="slideTop">
                     <i class='bx bx-cog'></i>
-                    <h2>Mechanical Design</h2>
+                    <h3>Mechanical Design</h3>
+                    <br />
                     <p>
                         I specialize in designing mechanical systems, from concept to detailed engineering.
                         Whether it’s for automotive, industrial equipment, or consumer products,
                         I create solutions that meet functional, aesthetic, and manufacturing requirements.
                         My approach ensures efficiency, reliability, and cost-effectiveness in every design.
                     </p>
-                    <a href="#" class="read">learn more</a>
                 </div>
                 <div class="animate" data-animation="slideTop">
                     <i class='bx bx-wrench'></i>
-                    <h2>Prototyping & Testing</h2>
+                    <h3>Prototyping & Testing</h3>
+                    <br />
                     <p>
                         From creating physical prototypes to testing and validating design concepts, I use advanced techniques and tools to ensure the functionality and durability of products.
                         I conduct extensive simulations and real-world tests to refine designs and ensure they meet performance standards.
                     </p>
-                    <a href="#" class="read">learn more</a>
                 </div>
                 <div class="animate" data-animation="slideTop">
                     <i class='bx bx-atom'></i>
-                    <h2>Research & Problem-Solving</h2>
+                    <h3>Research & Problem-Solving</h3>
+                    <br />
                     <p>
                         Conduct in-depth research and analysis to solve complex engineering problems, optimize designs, and improve product performance.
                         Offering innovative solutions backed by technical insights and real-world testing.
                     </p>
-                    <a href="#" class="read">learn more</a>
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section>
 
-    <!-- SKILLS -->
+        <!-- SKILLS -->
+        <section id="skills">
 
-    <div class="blank-box"></div>
+            <div style="width:100%">
 
-    <section class="skills" id="skills">
+                <div class="animate" data-animation="slideRight" style="width: 100%; text-align: center;"><h1>My <span>Skills</span></h1></div>
+                <div class="carousal">
 
-        <div style="width:100%">
+                    <!-- LINE BAR -->
 
-            <div class="animate" data-animation="slideRight" style="width: 100%; text-align: center;"><h1>My <span>Skills</span></h1></div>
+                    <div class="glass-bx">
+                        <h5>CAD/CAM</h5>
 
-            <div class="blank-box"></div>
-            <section style="display:flex; flex-wrap: wrap;">
-
-                <!-- LINE BAR -->
-
-                <div class="container1">
-                    <h3 style="text-align: center; text-decoration: underline; text-underline-offset: 0.5rem;">Technical Skills</h3>
-
-                    <div class="Technical-bars">
-                        <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">CAD/CAM</a>
-                            <div class="info">
+                        <div class="Technical-bars">
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://img.utdstc.com/icon/60f/fe5/60ffe5d637858d71fc53ac96324bc4847d436a25247adc779db077191b10db74:200" />
+                                    <p>Autodesk Fusion</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _1">
+                                    <span></span>
+                                </div>
                             </div>
-                            <div class="progress-line _1">
-                                <span></span>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://www.vhv.rs/dpng/d/62-625368_logo-solidworks-png-transparent-png.png" />
+                                    <p>Solidworks</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _2">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="assets/logo/NX.ico" alt="NX CAD" />
+                                    <p>NX CAD</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _3">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://cdn.worldvectorlogo.com/logos/creo-parametrics.svg" alt="Creo" />
+                                    <p>Creo</p>
+                                </div>
+                                <div class="info">
+
+                                </div>
+                                <div class="progress-line _4">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://img.icons8.com/color/96/catia.png" alt="Catia" />
+                                    <div>Catia</div>
+                                </div>
+                                <div class="info">
+
+                                </div>
+                                <div class="progress-line _5">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
-                        <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">Additive Manufacturing</a>
-                            <div class="info">
-                            </div>
-                            <div class="progress-line _2">
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">Research & Data Analysis</a>
-                            </i>
-                            <div class="info">
-                            </div>
-                            <div class="progress-line _3">
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="bar">
-                            <a style="padding-bottom: 0.6rem; display: block;">Coding</a></i>
-                            <div class="info">
+                    </div>
 
+                    <div class="glass-bx">
+                        <h5>Analysis & Simulation</h5>
+
+                        <div class="Technical-bars">
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://media.glassdoor.com/sqll/6135/ansys-squarelogo-1582553427796.png" alt="Ansys" />
+                                    <p>Ansys</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _2">
+                                    <span></span>
+                                </div>
                             </div>
-                            <div class="progress-line _4">
-                                <span></span>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://www.simscale.com/wp-content/uploads/2020/04/piston-rod-1.jpg" alt="FEA" />
+                                    <p>FEA</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _1">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://www.ipcuk.com/wp-content/uploads/bb-plugin/cache/Computational-Fluid-Dynamic-CFD-square-4245dd642b6f8baf61139fdd2b2664eb-609277d9c673c.jpg" alt="CFD" />
+                                    <p>CFD</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _6">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://media.imgcdn.org/repo/2023/03/altair-inspire/665d6f55b0e71-altair-inspire-Icon.webp" alt="Altair Inspire" />
+                                    <p>Altair Inspire</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _4">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-bx">
+                        <h5>Programming Skills</h5>
+
+                        <div class="Technical-bars">
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" />
+                                    <p>Python</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _1">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C/C++" />
+                                    <p>C/C++</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _7">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://img.icons8.com/color/512/flutter.png" alt="Flutter" />
+                                    <p>Flutter</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _4">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="title">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRELunlkyFk5TtyF76yEpHkyvGPOfaDGIXK-A&s" alt="HTML, CSS, JS" />
+                                    <p>HTML, CSS, JS</p>
+                                </div>
+                                <div class="info">
+                                </div>
+                                <div class="progress-line _3">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-                <div class="container1">
-                    <h3 style="text-align: center; text-decoration: underline; text-underline-offset: 0.5rem;">Professional Skills</h3>
+                <div class="glass-bx">
+                    <h5>Professional Skills</h5>
                     <div class="radial-bars">
 
                         <div class="radial-bar">
@@ -296,148 +441,138 @@
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-    </section>
-
-
-    <div class="blank-box"></div>
-
-    <!-- PROJECTS -->
-
-    <section class="projects" id="project">
-
-        <div style="width: 100%;">
-            <div style="text-align: center;">
-                <h1 class="animate" data-animation="slideRight"> Latest<span>Project</span></h1>
             </div>
-
-
-            <div class="project-contents">
-                <div class="row">
-                    <img src="assets/project/prototype.svg">
-                    <div class="layer">
-                        <h3>3D Printed Mechanical Part Prototype</h3>
-                        <p>
-                            Designed and 3D printed a functional prototype for a mechanical part to be used in an automotive application.
-                            Focused on optimizing strength-to-weight ratio and minimizing material usage through careful design and FDM printing techniques.
-                        </p>
-                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <img src="assets/project/assembly.svg">
-                    <div class="layer">
-                        <h3>CAD Model of an Automated Assembly Line</h3>
-                        <p>
-                            Created a detailed 3D CAD model for a conceptual automated assembly line.
-                            Integrated various mechanical systems and ensured the design was efficient, with a focus on reducing cycle time and increasing productivity.
-                        </p>
-                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <img src="assets/project/cad.svg">
-                    <div class="layer">
-                        <h3>Design and Simulation of a Heat Exchanger System</h3>
-                        <p>
-                            Led the design and simulation of a heat exchanger system using SolidWorks.
-                            Focused on optimizing the heat transfer efficiency while ensuring the design met material and cost constraints.
-
-                        </p>
-                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <img src="assets/project/researching-animate.svg">
-                    <div class="layer">
-                        <h3>Research Paper on Additive Manufacturing</h3>
-                        <p>
-                            Conducted a comprehensive research project on the use of additive manufacturing in aerospace applications.
-                            Focused on material properties, cost-effectiveness, and design flexibility in 3D printed parts for aircraft systems.
-                        </p>
-                        <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="blank-box"></div>
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-        <div style="width: 100%; text-align: center;">
-            <h1 class="animate" data-animation="slideRight"> Contact<span>Me</span></h1>
-        </div>
-
-        <section class="contact">
-
-            <div class="contact-txt">
-                <h4 class="animate" data-animation="slideRight">Get in <span>touch</span></h4>
-                <div>
-                    <p class="animate" data-animation="slideTop" style="margin-top: 2rem; margin-right: 1rem;">
-                        I'd love to hear from you! Whether you have a project in mind, want to discuss potential collaborations, or simply want to connect, feel free to reach out.
-                        I'm always open to new opportunities and creative ideas.
-                    </p>
-                </div>
-            </div>
-
-            <form id="contactForm" class="contact-form" onsubmit="sendEmail(event)">
-                <div class="contact-content">
-                    <label for="name" class="contact-label"></label>
-                    <input type="text" class="contact-input" id="name" name="name" required placeholder="Name">
-                </div>
-
-                <div class="contact-content">
-                    <label for="email" class="contact-label"></label>
-                    <input type="email" class="contact-input" id="email" name="email" required placeholder="E-mail">
-                </div>
-
-                <div class="contact-content">
-                    <label for="subject" class="contact-label"></label>
-                    <input type="text" class="contact-input" id="subject" name="subject" required placeholder="Subject">
-                </div>
-
-                <div class="contact-content">
-                    <label for="message" class="contact-label"></label>
-                    <textarea class="contact-input" id="message" name="message" required placeholder="Describe your message or inquiry"></textarea>
-                </div>
-
-                <div>
-                    <button type="submit" class="btn-img">
-                        Send message
-                        <i class='bx bx-send'></i>
-                    </button>
-                </div>
-            </form>
-
         </section>
-    </section>
+
+        <!-- PROJECTS -->
+
+        <section id="project">
+
+            <div style="width: 100%;">
+                <div style="text-align: center;">
+                    <h1 class="animate" data-animation="slideRight"> Latest<span>Project</span></h1>
+                </div>
+
+                <br />
+                <br />
 
 
-    <div class="blank-box"></div>
+                <div class="grid">
+                    <div class="project" style="--bg-image: url('../assets/project/p1.png');">
+                        <img src="assets/project/p1.png">
+                        <div class="layer">
+                            <h3>Solar-Powered Autonomous Agricultural Robot</h3>
+                            <p> Designed and built a solar-powered autonomous robot capable of performing seed sowing and fertilizer spraying tasks. Focused on enhancing agricultural efficiency through automation, renewable energy integration, and smart task execution. </p>
+                            <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                        </div>
+                    </div>
+                    <div class="project" style="--bg-image: url('../assets/project/p2.png');">
+                        <img src="assets/project/p2.png">
+                        <div class="layer">
+                            <h3>Green Urban Hub Concept</h3>
+                            <p> Designed a sustainable social hub powered by solar panels and integrated with waste management systems.
+                                Included features like mobile charging ports and collaborative seating areas to promote community interaction and environmental awareness in urban spaces. </p>
+                            <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                        </div>
+                    </div>
+                    <div class="project" style="--bg-image: url('../assets/project/p3.png');">
+                        <img src="assets/project/p3.png">
+                        <div class="layer">
+                            <h3>Full Cycle Design and Rendering of a Mechanical System</h3>
+                            <p>
+                                Completed the end-to-end design of a mechanical system using Fusion 360, including detailed modeling, assembly, and realistic rendering.
+                                Emphasized functionality, manufacturability, and visual presentation to communicate the design effectively.
+                            <p/>
+                            <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                        </div>
+                    </div>
+                    <div class="project" style="--bg-image: url('../assets/project/p4.png');">
+                        <img src="assets/project/p4.png">
+                        <div class="layer">
+                            <h3>CGPA Calculator for College</h3>
+                            <p> Developed a responsive CGPA calculator specially as per the syllabus of Chennai Institute of Technology. </p>
+                            <a href="https://jeevadarshan.github.io/CGPA-Calculator"><i class='bx bx-link-external' style='color:#000f'></i></a>
+                        </div>
+                    </div>
+                </div>
 
-    <!--   CREDITS   -->
+            </div>
+        </section>
 
-    <div style="width: 100%; display: flex; justify-content: flex-end;">
-        <p style="margin: 0; margin-bottom: 0.5rem; padding-right:0.5rem; ">
-            Illustrations by <a href="https://storyset.com" target="_blank" rel="noopener noreferrer" style="color: white;">Storyset</a>
-        </p>
-    </div>
 
+        <!-- CONTACT -->
+
+        <section id="contact">
+            <div style="width: 100%; text-align: center;">
+                <h1 class="animate" data-animation="slideRight"> Contact<span>Me</span></h1>
+            </div>
+
+            <div class="contact">
+
+                <div class="contact-txt">
+                    <h4 class="animate" data-animation="slideRight">Get in <span>touch</span></h4>
+                    <div>
+                        <p class="animate" data-animation="slideTop" style="margin-top: 2rem;">
+                            I'd love to hear from you! Whether you have a project in mind, want to discuss potential collaborations, or simply want to connect, feel free to reach out.
+                            I'm always open to new opportunities and creative ideas.
+                        </p>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form" onsubmit="sendEmail(event)">
+                    <div class="contact-content">
+                        <label for="name" class="contact-label"></label>
+                        <input type="text" class="contact-input" id="name" name="name" required placeholder="Name">
+                    </div>
+
+                    <div class="contact-content">
+                        <label for="email" class="contact-label"></label>
+                        <input type="email" class="contact-input" id="email" name="email" required placeholder="E-mail">
+                    </div>
+
+                    <div class="contact-content">
+                        <label for="subject" class="contact-label"></label>
+                        <input type="text" class="contact-input" id="subject" name="subject" required placeholder="Subject">
+                    </div>
+
+                    <div class="contact-content">
+                        <label for="message" class="contact-label"></label>
+                        <textarea class="contact-input" id="message" name="message" required placeholder="Describe your message or inquiry"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn-box">
+                            Send message
+                            <i class='bx bx-send'></i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+            <br />
+            <br />
+        </section>
+
+
+        <!--   CREDITS   -->
+
+        <div style="width: 100%; display: flex; justify-content: flex-end;">
+            <p style="margin: 0; margin-bottom: 0.5rem; padding-right:0.5rem; ">
+                Illustrations by <a href="https://storyset.com" target="_blank" rel="noopener noreferrer" style="color: white;">Storyset</a>
+            </p>
+        </div>
+    </main>
     <!--   FOOTER   -->
 
     <footer class="footer">
 
         <h2 class="animate" data-animation="showText">Let's <span>Connect</span></h2>
-        <div class="home-sci">
-            <a href="https://www.linkedin.com/in/jeevadarshan-g/" style="--i:7;">
+        <div class="animate icons" data-animation="slideRight">
+            <a href="https://www.linkedin.com/in/jeevadarshan-g/" style="--i:1;">
                 <i class='bx bxl-linkedin'></i>
             </a>
-            <a href="https://www.github.com/JEEVADARSHAN" style="--i:8;"><i class='bx bxl-github'></i></a>
-            <a target="_top" href="mailto:jeevadarshan11@gmail.com" style="--i:9;"><i class='bx bxl-gmail'></i></a>
+            <a href="https://www.github.com/JEEVADARSHAN" style="--i:2;"><i class='bx bxl-github'></i></a>
+            <a target="_top" href="mailto:jeevadarshan11@gmail.com" style="--i:3;"><i class='bx bxl-gmail'></i></a>
         </div>
         <div>
             <p style="width: 100%; margin-bottom: 1rem;">© 2024 Jeevadarshan G. All rights reserved. </p>

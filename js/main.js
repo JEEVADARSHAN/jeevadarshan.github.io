@@ -2,20 +2,22 @@
 
 document.addEventListener('click', function (event) {
     const checkbox = document.querySelector('#navi-toggle');
-    const menuContainer = document.querySelector('.background');
-    const navLinks = document.querySelectorAll('.link');
+    const menuContainer = document.querySelector('.menu');
 
-    
-    if (menuContainer.contains(event.target)) {
-        checkbox.checked = false; 
+    if (menuContainer.contains(event.target) && event.target.tagName === 'A') {
+        checkbox.checked = false;
+        body.style.overflow = 'auto';
     }
-   
-    navLinks.forEach(link => {
-        if (link.contains(event.target)) {
-            checkbox.checked = false; 
-        }
-    });
-    
+});
+const checkbox = document.querySelector('#navi-toggle');
+const body = document.body;
+
+checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = 'auto';
+    }
 });
 
 

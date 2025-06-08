@@ -1,4 +1,102 @@
+/*========== HEADER ==========*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: #001b29;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0px -50px 43px white;
+}
+
+    .header .h1 {
+        text-decoration: none;
+        color: #fff;
+        margin-left: 0.5rem;
+        font-weight: 600;
+        cursor: default;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+    }
+
+
+.navbar a {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+    .navbar a:hover {
+        color: #0ef;
+    }
+
+.hamburger {
+    display: none;
+}
+
+.navbar.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 1s ease, opacity 0.5s ease;
+}
+
+
+
+
+/*========== SOCIAL MEDIA ICONS ==========*/
+
+
+.icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(20px, 2rem, 40px);
+    height: clamp(20px, 2rem, 40px);
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: clamp(20px, 1rem, 30px);
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+    .icons a:hover {
+        background: #0ef;
+        color: #001b29;
+        box-shadow: 0 0 clamp(10px, 1.5rem, 15px) cyan, 0 0 clamp(15px, 3rem, 20px) cyan;
+    }
+
+
+
+
+
+
+
+
+
 /*========== BUTTON ==========*/
+button {
+    border-color: transparent;
+    border: 1px solid transparent;
+    border-style: none;
+}
 .btn-box {
     display: inline-block;
     padding: 12px 20px;
@@ -13,28 +111,12 @@
     animation: slideTop 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
     box-shadow: 0 0 5px cyan, 0 0 25px cyan;
+    border-color: transparent;
+    border-style: none;
 }
 
     .btn-box:hover {
-        box-shadow: 0 0 5px aqua, 0 0 25px cyan, 0 0 25px aliceblue;
-    }
-
-.btn-box-sm {
-    display: inline-block;
-    padding: 5px 10px;
-    background: cyan;
-    border-radius: 8px;
-    font-size: clamp(10px, 1rem, 1.5rem);
-    color: #001b29;
-    letter-spacing: 1px;
-    text-decoration: none;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-    box-shadow: 0 0 5px cyan, 0 0 25px cyan;
-}
-
-    .btn-box-sm:hover {
+        border-style: none;
         box-shadow: 0 0 5px aqua, 0 0 25px cyan, 0 0 25px aliceblue;
     }
 
@@ -69,36 +151,6 @@
         transform: scale(1.25);
         color: black;
     }
-
-/*========== IMAGE BUTTON ==========*/
-
-
-.btn-img {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 20px;
-    background: rgb(87, 201, 224);
-    border-radius: 5px;
-    font-size: clamp(0.5rem, 1rem, 2rem);
-    color: #001b29;
-    letter-spacing: 0.1rem;
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
-}
-
-.btn-img-icon {
-    width: 2.5rem; 
-    height: 2.5rem;
-    margin-left: 1rem; 
-}
-
-.btn-img:hover {
-    box-shadow: 0 0 5px aqua, 0 0 25px cyan, 0 0 25px aliceblue;
-}
-
 
 
 /*========== LOTTIE ==========*/
