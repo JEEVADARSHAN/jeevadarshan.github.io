@@ -8,8 +8,8 @@
 
 /*========== HOME SECTION ==========*/
 .home {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     width: 100%;
     display: flex;
     z-index: 10;
@@ -33,14 +33,14 @@
 #services{
     padding-top: 3rem;
     padding-bottom: 3rem;
-    justify-items: center;
+    width: 100%;
 }
 .service-list {
-    display: flex;
+    display: grid;
     grid-gap: 4rem;
-    margin-top: 4rem;
     margin-right: 1rem;
     margin-left: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 }
     .service-list div {
         background: #081b29;
@@ -53,14 +53,20 @@
         z-index: 2;
         padding: 1rem;
         transition: all 0.4s;
+        scroll-snap-align: center;
     }
 
-    .service-list div i {
-        font-size: 4rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        color: aqua;
-    }
+        .service-list div i {
+            font-size: 4rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
 
     .service-list div h2 {
         margin-bottom: 2rem;
@@ -79,8 +85,11 @@
 
 /*========== SKILLS SECTION ==========*/
 #skills {
+    position: relative;
     padding-top: 5rem;
     overflow-x: clip;
+    overflow-y: hidden;
+    justify-items: center;
 }
     #skills h5 {
         text-align: start;
@@ -91,10 +100,47 @@
         display: flex;
         flex-direction: row;
         overflow: scroll;
+        overflow-y: clip;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        scroll-behavior: smooth;
     }
+
+.previous-btn, .next-btn {
+    position: absolute;
+    top: 30%;
+    z-index: 10;
+    font-size: 4rem;
+    display: none;
+}
+
+.previous-btn {
+    left: 0.3rem;
+}
+
+.next-btn {
+    right: 0.3rem;
+}
+
+    .previous-btn i, .next-btn i {
+        -webkit-text-stroke: 1px #4facfe;
+        text-stroke: 1px #4facfe;
+        color: #fff;
+        filter: drop-shadow(0 0 1px #4facfe) drop-shadow(0 0 100px #00f2fe);
+        -webkit-text-stroke: 1px #4facfe;
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        animation: flow 2.5s linear infinite;
+        background-image: linear-gradient( 90deg, transparent 40%, #4facfe 48%, #00f2fe 50%, #4facfe 52%, transparent 60% );
+    }
+.dot {
+    display: none;
+}
+
 #skill .grid::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
@@ -110,11 +156,14 @@
     -webkit-backdrop-filter: blur(2.7px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     transition: all 0.25s;
+    scroll-snap-align: center;
 }
 .glass-bx:hover{
     transform: scale(1.005);
 }
-
+    .glass-bx span {
+        background-clip: inherit;
+    }
 .bar {
     font-size: 0.8rem;
     padding-top: 1rem;
@@ -306,7 +355,7 @@
             stroke-dashoffset: 502;
             stroke-linecap: round;
             stroke-dashoffset: -1;
-            transition: stroke-dashoffset 1s ease;
+            transition: stroke-dashoffset 0.7s ease;
         }
 
 .path {
@@ -321,19 +370,19 @@
 
 
 .radial-bar.in-view .path-1 {
-    animation: animate-path1 1s 1s linear forwards;
+    animation: animate-path1 0.75s 0.4s linear forwards;
 }
 
 .radial-bar.in-view .path-2 {
-    animation: animate-path2 1s 1s linear forwards;
+    animation: animate-path2 0.75s 0.5s linear forwards;
 }
 
 .radial-bar.in-view .path-3 {
-    animation: animate-path3 1s 1s linear forwards;
+    animation: animate-path3 0.75s 0.6s linear forwards;
 }
 
 .radial-bar.in-view .path-4 {
-    animation: animate-path4 1s 1s linear forwards;
+    animation: animate-path4 0.75s 0.7s linear forwards;
 }
 
 .radial-bar .percentage {
@@ -347,7 +396,7 @@
     transform: translate(-50%, -50%);
     font-size: 1rem;
     font-weight: 500;
-    animation: showText 0.5s 2s linear forwards;
+    animation: showText 0.5s 0.5s linear forwards;
     opacity: 0;
 }
 
@@ -362,7 +411,7 @@
     bottom: -5px;
     transform: translateX(-0px);
     font-weight: 500;
-    animation: showText 0.5s 2s linear forwards;
+    animation: showText 0.5s 0.6s linear forwards;
     opacity: 0;
 }
 
@@ -376,6 +425,7 @@
     border-radius: 40px;
     transition: all 0.5s;
     aspect-ratio: 1/1;
+    transition: all 1s;
 }
 #project .grid {
     margin-right: 2rem;
@@ -449,13 +499,22 @@
         border-radius: 50%;
     }
 .project:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
-
+    .project:hover img {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
 .project:hover .layer {
     height: 100%;
 }
 
+.mech{
+    display: block;
+}
+.cs{
+    display: block;
+}
 
 /*========== CONTACT SECTION ==========*/
 #contact {
@@ -486,7 +545,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: fadeIn 0.8s ease-in-out;
 }
 
 
@@ -511,7 +569,7 @@
     }
 
     p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 }
 

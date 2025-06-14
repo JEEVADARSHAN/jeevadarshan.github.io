@@ -24,25 +24,46 @@ checkbox.addEventListener('change', function () {
 
 // ================= Scroll ====================
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+if (!window.location.pathname.includes('about.html')) {
+    window.onscroll = () => {
+        sections.forEach(sec => {
+            let top = window.scrollY;
+            let offset = sec.offsetTop - 150;
+            let height = sec.offsetHeight;
+            let id = sec.getAttribute('id');
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
 
-            let activeLink = document.querySelector('header nav a[href*=' + id + ']');
-            if (activeLink) {
-                activeLink.classList.add('active');
+                let activeLink = document.querySelector('header nav a[href*=' + id + ']');
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
             }
+        });
+    };
+}
+
+if (!window.location.pathname.includes('about.html')) {
+const carousal = document.querySelector('.carousal');
+carousal.addEventListener('scroll', () => {
+    const glassBoxes = document.querySelectorAll('.glass-bx');
+
+    glassBoxes.forEach(box => {
+        const rect = box.getBoundingClientRect();
+
+        // Check if the entire box is in horizontal view
+        if (rect.left >= 0 && rect.right <= window.innerWidth) {
+            box.classList.add('shrink');
+        } else {
+            box.classList.remove('shrink');
         }
     });
-};
+});
+}
+
 
 
 
@@ -130,7 +151,7 @@ function sendEmail(event) {
 }
 
 // ================= 3D Model with Three.js ====================
-
+if (!window.location.pathname.includes('about.html')) {
 function initModel() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -206,10 +227,142 @@ function initModel() {
         renderer.setSize(container.clientWidth, container.clientHeight);
     }
 }
+}
+
+
+
+// ================= Serivces Select Button ====================
+
+function toggleService(service, element) {
+    document.querySelectorAll('.btn-box-otl').forEach(btn => {
+        btn.classList.remove('clicked');
+    });
+    element.classList.add('clicked');
+
+
+    const mech = document.querySelectorAll('.mech');
+    const cs = document.querySelectorAll('.cs');
+
+    mech.forEach(item => item.style.display = "none");
+    cs.forEach(item => item.style.display = "none");
+
+    setTimeout(() => {
+        if (service == 'all') {
+            mech.forEach(item => item.style.display = "block");
+            cs.forEach(item => item.style.display = "block");
+            const btn = document.querySelectorAll('.cs');
+        }
+        else if (service == 'mech') {
+            mech.forEach(item => item.style.display = "block");
+        }
+        else if (service == 'cs') {
+            cs.forEach(item => item.style.display = "block");
+        }
+    }, 200); 
+}
+
+
+// ================= Skills carousal Button ====================
+if (!window.location.pathname.includes('about.html')) {
+
+const slide = document.querySelector('.carousal');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.previous-btn');
+const items = document.querySelectorAll('.glass-bx');
+const dots = document.querySelectorAll('.dots');
+
+let currentIndex = 0;
+
+function updatechevron() {
+    const isDesktop = window.innerWidth >= 1024;
+    if (!isDesktop) {
+        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+        nextBtn.style.display = currentIndex === items.length - 2 ? 'none' : 'block';
+        setTimeout(() => {
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }, 100);
+    } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+    }
+}
+
+
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < items.length - 2) {
+        currentIndex++;
+        slide.scrollBy({
+            left: slide.clientWidth,
+            behavior: 'smooth'
+        });
+        updatechevron();
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        slide.scrollBy({
+            left: -slide.clientWidth,
+            behavior: 'smooth'
+        });
+        updatechevron();
+    }
+});
+
+slide.addEventListener('scroll', () => {
+    const newIndex = Math.round(slide.scrollLeft / slide.clientWidth);
+    if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        updatechevron();
+    }
+});
+
+updatechevron();
+}
+
+
+
+// ================= Project Select Button ====================
+
+function toggleProject(project, element) {
+    document.querySelectorAll('.btn-box-otl.pj').forEach(btn => {
+        btn.classList.remove('clicked');
+    });
+    element.classList.add('clicked');
+
+
+    const mech = document.querySelectorAll('.project.mech');
+    const cs = document.querySelectorAll('.project.cs');
+
+    mech.forEach(item => item.style.display = "none");
+    cs.forEach(item => item.style.display = "none");
+
+    setTimeout(() => {
+        if (project == 'all') {
+            mech.forEach(item => item.style.display = "block");
+            cs.forEach(item => item.style.display = "block");
+            const btn = document.querySelectorAll('.project.cs');
+        }
+        else if (project == 'mech') {
+            mech.forEach(item => item.style.display = "block");
+        }
+        else if (project == 'cs') {
+            cs.forEach(item => item.style.display = "block");
+        }
+    }, 200);
+}
+
 
 
 // ================= Typer ====================
-
+if (!window.location.pathname.includes('about.html')) {
 var typed = new Typed(".text", {
     strings: ["CAD Enthusiastic", "Python Developer", "Researcher"],
     typeSpeed: 100,
@@ -217,6 +370,6 @@ var typed = new Typed(".text", {
     backDelay: 1000,
     loop: true
 })
+}
 
 window.onload = initModel;
-

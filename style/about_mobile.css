@@ -1,5 +1,10 @@
 @media screen and (max-width: 768px) {
-
+    html {
+        scroll-snap-type: y none;
+    }
+    section {
+        scroll-snap-align: none;
+    }
     /*  EDUCATION  */
     .section-education {
         display: flex;
@@ -36,7 +41,7 @@
     }
         .timeline-item::after {
             height: 4rem;
-            background: cyan;
+            background-image: linear-gradient(45deg,#4facfe, #00f2fe);
             content: " ";
             color: white;
             width: 5px;
@@ -90,21 +95,23 @@
     /*  EXPERIENCE  */
 
     .tl-grid {
-        grid-template-columns: 0.5fr 1.5fr;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: repeat(5, auto);
         grid-template-areas:
-            "five one "
-            "six two"
-            "seven three"
-            "eight four";
+            "two one "
+            "four three"
+            "six five"
+            "eight seven"
+            "ten nine";
         gap: 10px;
     }
     
     .line{
         grid-column: 1;
-        grid-row: 1/ span 4;
+        grid-row: 1/ span 5;
         height: 100%;
         width: 5px;
+        z-index:1;
     }
 
     .tl-dt-top::before,

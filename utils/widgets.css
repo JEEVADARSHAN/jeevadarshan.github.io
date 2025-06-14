@@ -65,7 +65,7 @@
     width: clamp(20px, 2rem, 40px);
     height: clamp(20px, 2rem, 40px);
     background: transparent;
-    border: 2px solid #0ef;
+    border: 2px solid transparent; /* Needed for the trick */
     border-radius: 50%;
     font-size: clamp(20px, 1rem, 30px);
     color: #0ef;
@@ -75,19 +75,32 @@
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
+    background-image: linear-gradient(#001b29, #001b29), /* Background layer */
+    linear-gradient(45deg, #4facfe, #00f2fe); /* Gradient border layer */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
     .icons a:hover {
-        background: #0ef;
         color: #001b29;
         box-shadow: 0 0 clamp(10px, 1.5rem, 15px) cyan, 0 0 clamp(15px, 3rem, 20px) cyan;
     }
+    .icons a::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        z-index: -1;
+        transform: scale(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+        border-radius: 50%;
+    }
 
-
-
-
-
-
+    /* On hover, expand the gradient fill */
+    .icons a:hover::before {
+        transform: scale(1);
+    }
 
 
 
@@ -100,13 +113,12 @@ button {
 .btn-box {
     display: inline-block;
     padding: 12px 20px;
-    background: cyan;
+    background: linear-gradient(45deg,#4facfe, #00f2fe);
     border-radius: 40px;
     font-size: clamp(5px, 1rem, 10px);
     color: #001b29;
     letter-spacing: 1px;
     text-decoration: none;
-    font-weight: 600;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
@@ -120,6 +132,54 @@ button {
         box-shadow: 0 0 5px aqua, 0 0 25px cyan, 0 0 25px aliceblue;
     }
 
+
+.btn-box-otl {
+    display: flex;
+    align-items: center; /* Vertically center icon + text */
+    justify-content: center;
+    gap: 5px;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    font-size: clamp(5px, 1rem, 1.5rem);
+    text-decoration: none;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    border-color: transparent;
+    border-style: none;
+    background: transparent;
+    border: 2px solid transparent;
+    color: #0ef;
+    transition: .5s ease;
+    background-image: linear-gradient(#001b29, #001b29), /* Background layer */
+    linear-gradient(45deg, #4facfe, #00f2fe); /* Gradient border layer */
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+    .btn-box-otl::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        z-index: -1;
+        transform: scale(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+        border-radius: 40px;
+    }
+    .btn-box-otl:hover::before {
+        transform: scale(1);
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+    }
+    .btn-box-otl:hover {
+        color: #333;
+    }
+    .btn-box-otl.clicked::before {
+        transform: scale(1);
+    }
+    .btn-box-otl.clicked {
+        color: #333;
+    }
 
 
 /*========== SCROLL BUTTON ==========*/
@@ -198,6 +258,7 @@ button {
     box-shadow: 0 -4px 8px 0 rgba(255, 255, 255, 0.2), 0 -6px 20px 0 rgba(255, 255, 255, 0.19);
     animation: gradientFlow 15s linear infinite;
     background-size: 400% 400%;
+    scroll-snap-align: end;
 }
     .footer.show-animation span {
         display: inline-block;

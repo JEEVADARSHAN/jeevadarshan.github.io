@@ -51,6 +51,28 @@
     }
 }
 
+@keyframes flow {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes movement{
+    0%{
+        transform:translateX(-5px);
+    }
+    50%{
+        transform:translateX(5px);
+    }
+    100%{
+       transform: translateX(-5px);
+    }
+}
+
 @keyframes animate {
     100% {
         transform: scaleX(1);

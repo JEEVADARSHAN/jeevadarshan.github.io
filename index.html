@@ -150,7 +150,11 @@
                     <a href="mailto:jeevadarshan11@gmail.com" style="--i:9;" data-id="Gmail"><i class='bx bxl-gmail'></i></a>
                 </div>
 
-                <a href="#about" class="animate btn-box" data-animation="slideTop">More About Me</a>
+                <div style="display:flex; flex-direction: row;">
+                    <a href="#about" class="animate btn-box" data-animation="slideTop">More About Me</a>
+                    <a>&nbsp&nbsp&nbsp&nbsp</a>
+                    <a href="assets/other/01_Resume.pdf" download class="animate btn-box-otl" data-animation="slideTop" style="font-size: clamp(5px, 1rem, 10px); letter-spacing: 1px;">Resume <i class='bx bxs-download'></i></a>
+                </div>
             </div>
             <div id="model" class="right model">
                 <canvas id="modelCanvas"></canvas>
@@ -188,38 +192,107 @@
         <!-- SERVICES -->
 
         <section id="services">
-            <h1 class="animate" data-animation="slideRight">My <span>Services</span></h1>
+            <div style="justify-items:center;"><h1 class="animate" data-animation="slideRight">My <span>Services</span></h1></div>
+            <br />
+            <br />
+            <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly">
+                <a class="btn-box-otl clicked" onclick="toggleService('all', this)">
+                    <i class='bx bx-grid-alt'></i> All
+                </a>
+                <a class="btn-box-otl" onclick="toggleService('mech', this)">
+                    <i class='bx bx-cog'></i> Mechanical
+                </a>
+                <a class="btn-box-otl" onclick="toggleService('cs', this)">
+                    <i class='bx bx-code'></i> Software
+                </a>
+            </div>
+            <br />
+            <br />
             <div class="service-list">
-                
-                <div class="animate" data-animation="slideTop">
-                    <i class='bx bx-cog'></i>
-                    <h3>Mechanical Design</h3>
+
+                <!--    MECH    -->
+                <div class="animate mech" data-animation="slideTop">
+                    <i class='bx bx-pencil'></i>
+                    <h4>CAD Design & Drafting</h4>
                     <br />
                     <p>
-                        I specialize in designing mechanical systems, from concept to detailed engineering.
-                        Whether it’s for automotive, industrial equipment, or consumer products,
-                        I create solutions that meet functional, aesthetic, and manufacturing requirements.
-                        My approach ensures efficiency, reliability, and cost-effectiveness in every design.
+                        I provide precise 2D drafting and 3D CAD modeling using tools like SolidWorks, AutoCAD, and Fusion 360.
+                        My services cover part modeling, assemblies, and technical drawings ready for manufacturing.
                     </p>
                 </div>
-                <div class="animate" data-animation="slideTop">
+
+                <div class="animate mech" data-animation="slideTop">
+                    <i class='bx bx-cube'></i>
+                    <h4>3D Modeling & Rendering</h4>
+                    <br />
+                    <p>
+                        Realistic and accurate 3D models for prototypes, presentations, and product visuals.
+                        Includes photorealistic rendering and animation for concept visualization and marketing.
+                    </p>
+                </div>
+
+                <div class="animate mech" data-animation="slideTop">
+                    <i class='bx bx-bolt-circle'></i>
+                    <h4>Simulation & Analysis</h4>
+                    <br />
+                    <p>
+                        I run FEA and CFD simulations to test strength, stress, heat flow, and more.
+                        My goal is to identify weak points, improve durability, and validate your design before prototyping.
+                    </p>
+                </div>
+
+                <div class="animate mech" data-animation="slideTop">
                     <i class='bx bx-wrench'></i>
-                    <h3>Prototyping & Testing</h3>
+                    <h4>Product Development</h4>
                     <br />
                     <p>
-                        From creating physical prototypes to testing and validating design concepts, I use advanced techniques and tools to ensure the functionality and durability of products.
-                        I conduct extensive simulations and real-world tests to refine designs and ensure they meet performance standards.
+                        Complete product development from concept to production-ready design.
+                        I assist with ideation, prototyping, and preparing documentation for manufacturing.
                     </p>
                 </div>
-                <div class="animate" data-animation="slideTop">
-                    <i class='bx bx-atom'></i>
-                    <h3>Research & Problem-Solving</h3>
+
+                <div class="animate mech" data-animation="slideTop">
+                    <i class='bx bx-check-shield'></i>
+                    <h4>Technical Documentation</h4>
                     <br />
                     <p>
-                        Conduct in-depth research and analysis to solve complex engineering problems, optimize designs, and improve product performance.
-                        Offering innovative solutions backed by technical insights and real-world testing.
+                        Professional documentation for parts, assemblies, and processes.
+                        Includes BOMs, assembly instructions, manufacturing notes, and user manuals.
                     </p>
                 </div>
+
+
+                <!--    CS    -->
+                <div class="animate cs" data-animation="slideTop">
+                    <i class='bx bx-globe'></i>
+                    <h4>Web Development</h4>
+                    <br />
+                    <p>
+                        I design and build responsive websites using HTML, CSS, JavaScript, React, and backend frameworks like Django or Node.js.
+                        From landing pages to full-stack applications, I deliver fast and secure solutions.
+                    </p>
+                </div>
+
+                <div class="animate cs" data-animation="slideTop">
+                    <i class='bx bx-mobile'></i>
+                    <h4>App Development</h4>
+                    <br />
+                    <p>
+                        Cross-platform mobile and desktop app development using Flutter, React Native, or native tools.
+                        I focus on clean UI/UX and high-performance code tailored to your business needs.
+                    </p>
+                </div>
+
+                <div class="animate cs" data-animation="slideTop">
+                    <i class='bx bx-terminal'></i>
+                    <h4>Python Scripts & Automation</h4>
+                    <br />
+                    <p>
+                        I develop custom Python scripts for data processing, automation, file handling, scraping, and API integration.
+                        Ideal for streamlining workflows and saving time on repetitive tasks.
+                    </p>
+                </div>
+
             </div>
 
         </section>
@@ -227,218 +300,225 @@
         <!-- SKILLS -->
         <section id="skills">
 
-            <div style="width:100%">
+            <div class="animate" data-animation="slideRight" style="width: 100%; text-align: center;"><h1>My <span>Skills</span></h1></div>
+            <div class="previous-btn">
+                <i class='bx bx-chevrons-left' style='color:#ffffff'></i>
+            </div>
+            <div class="next-btn">
+                <i class='bx bx-chevrons-right' style='color:#ffffff'></i>
+            </div>
+            <div class="carousal">
+                <!-- LINE BAR -->
+                <div class="glass-bx">
+                    <h5>CAD/CAM</h5>
 
-                <div class="animate" data-animation="slideRight" style="width: 100%; text-align: center;"><h1>My <span>Skills</span></h1></div>
-                <div class="carousal">
-
-                    <!-- LINE BAR -->
-
-                    <div class="glass-bx">
-                        <h5>CAD/CAM</h5>
-
-                        <div class="Technical-bars">
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://img.utdstc.com/icon/60f/fe5/60ffe5d637858d71fc53ac96324bc4847d436a25247adc779db077191b10db74:200" />
-                                    <p>Autodesk Fusion</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _1">
-                                    <span></span>
-                                </div>
+                    <div class="Technical-bars">
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://img.utdstc.com/icon/60f/fe5/60ffe5d637858d71fc53ac96324bc4847d436a25247adc779db077191b10db74:200" />
+                                <p>Autodesk Fusion</p>
                             </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://www.vhv.rs/dpng/d/62-625368_logo-solidworks-png-transparent-png.png" />
-                                    <p>Solidworks</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _2">
-                                    <span></span>
-                                </div>
+                            <div class="info">
                             </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="assets/logo/NX.ico" alt="NX CAD" />
-                                    <p>NX CAD</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _3">
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://cdn.worldvectorlogo.com/logos/creo-parametrics.svg" alt="Creo" />
-                                    <p>Creo</p>
-                                </div>
-                                <div class="info">
-
-                                </div>
-                                <div class="progress-line _4">
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://img.icons8.com/color/96/catia.png" alt="Catia" />
-                                    <div>Catia</div>
-                                </div>
-                                <div class="info">
-
-                                </div>
-                                <div class="progress-line _5">
-                                    <span></span>
-                                </div>
+                            <div class="progress-line _1">
+                                <span></span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="glass-bx">
-                        <h5>Analysis & Simulation</h5>
-
-                        <div class="Technical-bars">
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://media.glassdoor.com/sqll/6135/ansys-squarelogo-1582553427796.png" alt="Ansys" />
-                                    <p>Ansys</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _2">
-                                    <span></span>
-                                </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://www.vhv.rs/dpng/d/62-625368_logo-solidworks-png-transparent-png.png" />
+                                <p>Solidworks</p>
                             </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://www.simscale.com/wp-content/uploads/2020/04/piston-rod-1.jpg" alt="FEA" />
-                                    <p>FEA</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _1">
-                                    <span></span>
-                                </div>
+                            <div class="info">
                             </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://www.ipcuk.com/wp-content/uploads/bb-plugin/cache/Computational-Fluid-Dynamic-CFD-square-4245dd642b6f8baf61139fdd2b2664eb-609277d9c673c.jpg" alt="CFD" />
-                                    <p>CFD</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _6">
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://media.imgcdn.org/repo/2023/03/altair-inspire/665d6f55b0e71-altair-inspire-Icon.webp" alt="Altair Inspire" />
-                                    <p>Altair Inspire</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _4">
-                                    <span></span>
-                                </div>
+                            <div class="progress-line _2">
+                                <span></span>
                             </div>
                         </div>
-                    </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="assets/logo/NX.ico" alt="NX CAD" />
+                                <p>NX CAD</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _3">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://cdn.worldvectorlogo.com/logos/creo-parametrics.svg" alt="Creo" />
+                                <p>Creo</p>
+                            </div>
+                            <div class="info">
 
-                    <div class="glass-bx">
-                        <h5>Programming Skills</h5>
+                            </div>
+                            <div class="progress-line _4">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://img.icons8.com/color/96/catia.png" alt="Catia" />
+                                <div>Catia</div>
+                            </div>
+                            <div class="info">
 
-                        <div class="Technical-bars">
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" />
-                                    <p>Python</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _1">
-                                    <span></span>
-                                </div>
                             </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C/C++" />
-                                    <p>C/C++</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _7">
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://img.icons8.com/color/512/flutter.png" alt="Flutter" />
-                                    <p>Flutter</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _4">
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRELunlkyFk5TtyF76yEpHkyvGPOfaDGIXK-A&s" alt="HTML, CSS, JS" />
-                                    <p>HTML, CSS, JS</p>
-                                </div>
-                                <div class="info">
-                                </div>
-                                <div class="progress-line _3">
-                                    <span></span>
-                                </div>
+                            <div class="progress-line _5">
+                                <span></span>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="glass-bx">
-                    <h5>Professional Skills</h5>
-                    <div class="radial-bars">
+                    <h5>Analysis & Simulation</h5>
 
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                                <circle class="path path-1" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">90%</div>
-                            <div class="text">Creativity</div>
+                    <div class="Technical-bars">
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://media.glassdoor.com/sqll/6135/ansys-squarelogo-1582553427796.png" alt="Ansys" />
+                                <p>Ansys</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _2">
+                                <span></span>
+                            </div>
                         </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://www.simscale.com/wp-content/uploads/2020/04/piston-rod-1.jpg" alt="FEA" />
+                                <p>FEA</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _1">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://www.ipcuk.com/wp-content/uploads/bb-plugin/cache/Computational-Fluid-Dynamic-CFD-square-4245dd642b6f8baf61139fdd2b2664eb-609277d9c673c.jpg" alt="CFD" />
+                                <p>CFD</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _6">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://media.imgcdn.org/repo/2023/03/altair-inspire/665d6f55b0e71-altair-inspire-Icon.webp" alt="Altair Inspire" />
+                                <p>Altair Inspire</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _7">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                                <circle class="path path-2" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">65%</div>
-                            <div class="text">Communication</div>
-                        </div>
+                <div class="glass-bx">
+                    <h5>Programming Skills</h5>
 
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                                <circle class="path path-3" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">75%</div>
-                            <div class="text">Problem Solving</div>
+                    <div class="Technical-bars">
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" />
+                                <p>Python</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _1">
+                                <span></span>
+                            </div>
                         </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C/C++" />
+                                <p>C/C++</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _7">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://img.icons8.com/color/512/flutter.png" alt="Flutter" />
+                                <p>Flutter</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _4">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="title">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRELunlkyFk5TtyF76yEpHkyvGPOfaDGIXK-A&s" alt="HTML, CSS, JS" />
+                                <p>HTML, CSS, JS</p>
+                            </div>
+                            <div class="info">
+                            </div>
+                            <div class="progress-line _3">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                                <circle class="path path-4" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">85%</div>
-                            <div class="text">Teamwork</div>
-                        </div>
+            <div class="dot">
+                <a class="dots"><i class='bx bxs-circle'></i></a>
+                <a class="dots"><i class='bx bxs-circle'></i></a>
+                <a class="dots"><i class='bx bxs-circle'></i></a>
+            </div>
+            <div style="width: 90%;" class="glass-bx">
+                <h5>Professional Skills</h5>
+                <div class="radial-bars">
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">90%</div>
+                        <div class="text">Creativity</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">65%</div>
+                        <div class="text">Communication</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">75%</div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+
+                    <div class="radial-bar">
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">85%</div>
+                        <div class="text">Teamwork</div>
                     </div>
                 </div>
             </div>
@@ -450,15 +530,28 @@
 
             <div style="width: 100%;">
                 <div style="text-align: center;">
-                    <h1 class="animate" data-animation="slideRight"> Latest<span>Project</span></h1>
+                    <h1 class="animate" data-animation="slideRight"> Latest <span>Project</span></h1>
                 </div>
 
+                <br />
+                <br />
+                <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-evenly">
+                    <a class="btn-box-otl pj clicked" onclick="toggleProject('all', this)">
+                        <i class='bx bx-grid-alt'></i> All
+                    </a>
+                    <a class="btn-box-otl pj" onclick="toggleProject('mech', this)">
+                        <i class='bx bx-cog'></i> Mechanical
+                    </a>
+                    <a class="btn-box-otl pj" onclick="toggleProject('cs', this)">
+                        <i class='bx bx-code'></i> Software
+                    </a>
+                </div>
                 <br />
                 <br />
 
 
                 <div class="grid">
-                    <div class="project" style="--bg-image: url('../assets/project/p1.png');">
+                    <div class="project mech" style="--bg-image: url('../assets/project/p1.png');">
                         <img src="assets/project/p1.png">
                         <div class="layer">
                             <h3>Solar-Powered Autonomous Agricultural Robot</h3>
@@ -466,27 +559,29 @@
                             <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
                         </div>
                     </div>
-                    <div class="project" style="--bg-image: url('../assets/project/p2.png');">
+                    <div class="project mech" style="--bg-image: url('../assets/project/p2.png');">
                         <img src="assets/project/p2.png">
                         <div class="layer">
                             <h3>Green Urban Hub Concept</h3>
-                            <p> Designed a sustainable social hub powered by solar panels and integrated with waste management systems.
-                                Included features like mobile charging ports and collaborative seating areas to promote community interaction and environmental awareness in urban spaces. </p>
+                            <p>
+                                Designed a sustainable social hub powered by solar panels and integrated with waste management systems.
+                                Included features like mobile charging ports and collaborative seating areas to promote community interaction and environmental awareness in urban spaces.
+                            </p>
                             <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
                         </div>
                     </div>
-                    <div class="project" style="--bg-image: url('../assets/project/p3.png');">
+                    <div class="project mech" style="--bg-image: url('../assets/project/p3.png');">
                         <img src="assets/project/p3.png">
                         <div class="layer">
                             <h3>Full Cycle Design and Rendering of a Mechanical System</h3>
                             <p>
                                 Completed the end-to-end design of a mechanical system using Fusion 360, including detailed modeling, assembly, and realistic rendering.
                                 Emphasized functionality, manufacturability, and visual presentation to communicate the design effectively.
-                            <p/>
+                            <p />
                             <a href="#"><i class='bx bx-link-external' style='color:#000f'></i></a>
                         </div>
                     </div>
-                    <div class="project" style="--bg-image: url('../assets/project/p4.png');">
+                    <div class="project cs" style="--bg-image: url('../assets/project/p4.png');">
                         <img src="assets/project/p4.png">
                         <div class="layer">
                             <h3>CGPA Calculator for College</h3>
@@ -504,7 +599,7 @@
 
         <section id="contact">
             <div style="width: 100%; text-align: center;">
-                <h1 class="animate" data-animation="slideRight"> Contact<span>Me</span></h1>
+                <h1 class="animate" data-animation="slideRight"> Contact <span>Me</span></h1>
             </div>
 
             <div class="contact">
@@ -519,7 +614,7 @@
                     </div>
                 </div>
 
-                <form id="contactForm" class="contact-form" onsubmit="sendEmail(event)">
+                <form id="contactForm" class="contact-form animate" data-animation="slideTop" onsubmit="sendEmail(event)">
                     <div class="contact-content">
                         <label for="name" class="contact-label"></label>
                         <input type="text" class="contact-input" id="name" name="name" required placeholder="Name">
@@ -553,14 +648,6 @@
             <br />
         </section>
 
-
-        <!--   CREDITS   -->
-
-        <div style="width: 100%; display: flex; justify-content: flex-end;">
-            <p style="margin: 0; margin-bottom: 0.5rem; padding-right:0.5rem; ">
-                Illustrations by <a href="https://storyset.com" target="_blank" rel="noopener noreferrer" style="color: white;">Storyset</a>
-            </p>
-        </div>
     </main>
     <!--   FOOTER   -->
 

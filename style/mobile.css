@@ -1,5 +1,14 @@
 @media (max-width: 767px) {
 
+    html {
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    section {
+        scroll-snap-align: start;
+    }
 
     .left {
         max-width: 100vw;
@@ -13,8 +22,6 @@
 
 
 
-
-
     /*========== HEADER SECTION ==========*/
     .desktop-header {
         display: none;
@@ -25,6 +32,11 @@
 
     .checkbox {
         display: none;
+    }
+    .mobile-header span {
+        background-image: none;
+        color: none;
+        background-clip: inherit;
     }
 
     .button {
@@ -97,7 +109,7 @@
 
 
     /* Checkbox-based functionality */
-    .checkbox:checked ~ .menu {
+        .checkbox:checked ~ .menu {
         transform-origin: top;
         opacity: 1;
         visibility: visible;
@@ -169,7 +181,6 @@
     #home{
         display: flex;
         flex-direction: column;
-        width: calc(100% - 1rem);
     }
     #home .left{
         order: 1;
@@ -190,34 +201,89 @@
     #about .right {
         justify-items: center;
     }
-    #about .img1{
-        padding: 3rem;
-        overflow: hidden;
-    }
+        #about .img1 {
+            padding: 3rem;
+            overflow: hidden;
+        }
 
 
     /*========== SERVICE SECTION ==========*/
-    .service-list{
+    #services {
+        position: relative;
+        overflow-x: clip;
+        display: flex;
         flex-direction: column;
     }
+    .service-list {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(2, 1fr);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        gap: 1rem;
+        margin: 0 1rem;
+    }
+        .service-list::-webkit-scrollbar {
+            display: none;
+        }
+        .service-list div i {
+            font-size: 2rem;
+        }
+        .service-list div {
+            width: calc(100vw - 3rem);
+            scroll-snap-align: center;
+        }
 
 
     /*========== SKILLS SECTION ==========*/
+    #skills{
+        justify-items: inherit;
+    }
     #skills section {
         flex-direction: column;
     }
+
     .Technical-bars {
         min-width: calc(100vw - 7rem);
     }
+    .glass-bx:hover {
+        transform: none;
+    }
+
+    .previous-btn, .next-btn {
+        display: block;
+    }
+    .previous-btn{
+        animation: movement 1s linear infinite; 
+    }
+    .next-btn {
+        animation: movement 1s linear infinite;
+    }
+
+    .dot{
+        display:block;
+        text-align: center;
+    }
+    .dots {
+        background-image: linear-gradient(45deg,#4facfe, #00f2fe);
+        color: white;
+        background-clip: text;
+        border-radius: 50%;
+    }
+    .dots.active{
+        color: transparent;
+    }
 
     /*========== PROJECTS SECTION ==========*/
-    #project{
+    #project {
         overflow-x: clip;
     }
         #project .grid {
             display: flex;
             flex-direction: row;
-            overflow: scroll;
+            overflow-x: scroll;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
@@ -227,8 +293,9 @@
                 display: none; /* Chrome, Safari */
             }
 
-    .project{
+    .project {
         min-width: 100%;
+        scroll-snap-align: center;
     }
 
     /*========== CONTACTS SECTION ==========*/
