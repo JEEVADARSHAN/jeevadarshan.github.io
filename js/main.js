@@ -1,3 +1,76 @@
+// ================= 3D Model with Three.js ====================
+if (!window.location.pathname.includes('about.html')) {
+    function initModel() {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById('modelCanvas'),
+            alpha: true,
+            antialias: true
+        });
+        const container = document.getElementById('model');
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        camera.position.set(0, 3, 8);
+        camera.rotation.x = -Math.PI / 8;
+
+        const frontLight = new THREE.DirectionalLight(0xffffff, 1000, 100);
+        frontLight.position.set(0, 0, 9);
+        scene.add(frontLight);
+
+        const leftLight = new THREE.DirectionalLight(0xffffff, 1000, 100);
+        leftLight.position.set(-10, -1, 0);
+        scene.add(leftLight);
+
+        const clock = new THREE.Clock();
+
+        const objLoader = new THREE.OBJLoader();
+        objLoader.load('assets/3d_models/j.obj', function (object) {
+            scene.add(object);
+            object.position.set(0, -3, 2);
+            object.rotation.set(Math.PI / 2, Math.PI, Math.PI / 2);
+
+            object.traverse(function (child) {
+                if (child.isMesh) {
+                    // Apply gold material
+                    child.material = new THREE.MeshStandardMaterial({
+                        color: 0xFFD700,
+                        metalness: 1.0,
+                        roughness: 0.0,
+                    });
+                    child.material.opacity = 1.0;
+                    child.material.transparent = false;
+                }
+            });
+
+            // Animation loop using time-based increment
+            function animate() {
+                requestAnimationFrame(animate);
+                const delta = clock.getDelta(); // Time between frames
+                object.rotation.z += delta * 0.5; // Rotate based on time delta for smooth animation
+                renderer.render(scene, camera);
+            }
+
+            animate();
+        }, undefined, function (error) {
+            console.error("An error occurred while loading the model:", error);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', onWindowResize);
+
+        function onWindowResize() {
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+        }
+    }
+
+    window.onload = initModel;
+}
+
+
 // ================= MENU ====================
 
 document.addEventListener('click', function (event) {
@@ -150,86 +223,6 @@ function sendEmail(event) {
     window.location.href = mailtoLink;
 }
 
-// ================= 3D Model with Three.js ====================
-if (!window.location.pathname.includes('about.html')) {
-function initModel() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({
-        canvas: document.getElementById('modelCanvas'),
-        alpha: true,
-        antialias: true
-    });
-    const container = document.getElementById('model');
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-
-    camera.position.set(0, 3, 8);
-    camera.rotation.x = -Math.PI / 8;
-   
-    const frontLight = new THREE.DirectionalLight(0xffffff, 1000, 100); 
-    frontLight.position.set(0, 0, 9);
-    scene.add(frontLight);
-
-    const leftLight = new THREE.DirectionalLight(0xffffff, 1000, 100);
-    leftLight.position.set(-10, -1, 0); 
-    scene.add(leftLight);
-
-    
-    const objLoader = new THREE.OBJLoader();
-    objLoader.load('assets/3d_models/j.obj', function (object) {
-        scene.add(object);
-
-      
-        object.position.set(0, -3, 2);
-        object.rotation.set(Math.PI / 2, Math.PI, Math.PI / 2);
-
-        object.traverse(function (child) {
-            if (child.isMesh) {
-                // Apply a new material to each mesh
-                child.material = new THREE.MeshStandardMaterial({
-                    color: 0xFFD700, 
-                    metalness: 1.0,  
-                    roughness: 0.0,
-                });
-
-                // Ensure full opacity and no transparency
-                child.material.opacity = 1.0;
-                child.material.transparent = false;
-            }
-        });
-            
-        
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            object.rotation.z += 0.005; // Rotate around the Z-axis
-            renderer.render(scene, camera);
-        }
-
-        animate();
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', function () {
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        onWindowResize();
-    });
-    function onWindowResize() {
-
-        camera.aspect = container.clientWidth / container.clientHeight;
-
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    }
-}
-}
-
-
 
 // ================= Serivces Select Button ====================
 
@@ -358,18 +351,3 @@ function toggleProject(project, element) {
         }
     }, 200);
 }
-
-
-
-// ================= Typer ====================
-if (!window.location.pathname.includes('about.html')) {
-var typed = new Typed(".text", {
-    strings: ["CAD Enthusiastic", "Python Developer", "Researcher"],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true
-})
-}
-
-window.onload = initModel;

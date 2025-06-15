@@ -16,7 +16,6 @@
         text-decoration: none;
         color: #fff;
         margin-left: 0.5rem;
-        font-weight: 600;
         cursor: default;
         opacity: 0;
         animation: slideRight 1s ease forwards;
@@ -260,11 +259,6 @@ button {
     background-size: 400% 400%;
     scroll-snap-align: end;
 }
-    .footer.show-animation span {
-        display: inline-block;
-        opacity: 0;
-        animation: showText 2s ease forwards;
-    }
 
 
 

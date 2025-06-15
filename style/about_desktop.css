@@ -3,12 +3,8 @@
 
 .section-education {
     position: relative;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    min-height: 105%;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
     .section-education.white {
@@ -20,53 +16,19 @@
 
 .left-half {
     position: relative;
-    left: 0px;
-    top: 0px;
-    right: 0px;
     width: 50%;
+    justify-items: center;
     padding-top: 20%;
-    float: left;
 }
 
-    .left-half.bg {
-        position: absolute;
-        height: 100vh;
-    }
-
-        .left-half.bg.fixed {
-            position: fixed;
-            align-items: center;
-            z-index: 200;
-            background: #081b29;
-        }
-
-        .left-half.bg.bottom {
-            left: 0px;
-            top: auto;
-            right: 0px;
-            bottom: 0px;
-            z-index: 250;
-            display: none;
-            background: #081b29;
-        }
-
 .right-half.white {
-    left: 50%;
+    width: 50vw;
     overflow: auto;
-    float: none;
     background-color: #fff;
     margin-top: 4rem;
     margin-right: 0.5rem;
     border-radius: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.fixed {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    display: none;
 }
 
 
@@ -208,9 +170,9 @@
     padding: 0 1.5rem;
     margin-top: 0.5rem;
     transform: scaleX(0); 
-    transform-origin: right center;
+    transform-origin: right;
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s linear, opacity 0.5s ease;
 }
 
 .timeline-item:hover .tl-layer {
@@ -372,7 +334,7 @@
     display: grid;
     place-items: center;
     font-weight: bold;
-    transition: all 0.75s;
+    transition: all 0.5s ease-in-out;
 }
 
 .child img{
