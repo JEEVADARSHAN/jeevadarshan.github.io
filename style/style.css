@@ -154,5 +154,5 @@ section {
 
 .shrink {
     transition: all 1s;
-    transform: scale(0.9) !important;
+    transform: scale(0.8) !important;
 }

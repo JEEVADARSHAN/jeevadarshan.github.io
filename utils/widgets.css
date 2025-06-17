@@ -40,6 +40,9 @@
     .navbar a:hover {
         color: #0ef;
     }
+    .navbar a.highlight{
+        color: #0ef;
+    }
 
 .hamburger {
     display: none;

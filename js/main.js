@@ -96,49 +96,65 @@ checkbox.addEventListener('change', function () {
 
 
 // ================= Scroll ====================
+document.addEventListener('DOMContentLoaded', () => {
+    if (!window.location.pathname.includes('about.html')) {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.navbar a');
 
-if (!window.location.pathname.includes('about.html')) {
-    window.onscroll = () => {
-        sections.forEach(sec => {
-            let top = window.scrollY;
-            let offset = sec.offsetTop - 150;
-            let height = sec.offsetHeight;
-            let id = sec.getAttribute('id');
-
-            if (top >= offset && top < offset + height) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                let activeLink = document.querySelector('header nav a[href*=' + id + ']');
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        });
-    };
-}
-
-if (!window.location.pathname.includes('about.html')) {
-const carousal = document.querySelector('.carousal');
-carousal.addEventListener('scroll', () => {
-    const glassBoxes = document.querySelectorAll('.glass-bx');
-
-    glassBoxes.forEach(box => {
-        const rect = box.getBoundingClientRect();
-        box.classList.add('animate');
-
-        // Check if the entire box is in horizontal view
-        if (rect.left >= 0 && rect.right <= window.innerWidth) {
-            box.classList.add('shrink');
-            box.classList.remove('animate');
-        } else {
-            box.classList.remove('shrink');
-            box.classList.add('animate');
+        if (sections.length === 0 || navLinks.length === 0) {
+            console.warn("No sections or nav links found!");
+            return;
         }
-    });
+
+        window.addEventListener('scroll', () => {
+            let top = window.scrollY;
+
+            sections.forEach(sec => {
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if (top >= offset && top < offset + height) {
+                    navLinks.forEach(link => link.classList.remove('highlight'));
+
+                    const activeLink = document.querySelector('.navbar a[href*="' + id + '"]');
+                    if (activeLink) {
+                        activeLink.classList.add('highlight');
+                    }
+                }
+            });
+        });
+    }
 });
-}
+
+
+
+
+window.addEventListener('load', () => {
+    if (!window.location.pathname.includes('about.html')) {
+        const carousal = document.querySelector('.carousal');
+        if (carousal) {
+            const glassBoxes = document.querySelectorAll('.glass-bx');
+
+            carousal.addEventListener('scroll', () => {
+                glassBoxes.forEach(box => {
+                    const rect = box.getBoundingClientRect();
+                    box.classList.add('animate');
+
+                    if (rect.left >= 0 && rect.right <= window.innerWidth) {
+                        box.classList.add('shrink');
+                        box.classList.remove('animate');
+                    } else {
+                        box.classList.remove('shrink');
+                        box.classList.add('animate');
+                    }
+                });
+            });
+        }
+    }
+});
+
+
 
 
 
@@ -259,9 +275,9 @@ function toggleService(service, element) {
 
 
 // ================= Skills carousal Button ====================
-if (!window.location.pathname.includes('about.html')) {
-
-const slide = document.querySelector('.carousal');
+window.addEventListener('load', () => {
+    if (!window.location.pathname.includes('about.html')) {
+       const slide = document.querySelector('.carousal');
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.previous-btn');
 const items = document.querySelectorAll('.glass-bx');
@@ -322,6 +338,10 @@ slide.addEventListener('scroll', () => {
 
 updatechevron();
 }
+
+    }
+});
+
 
 
 

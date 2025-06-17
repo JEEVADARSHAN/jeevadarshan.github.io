@@ -113,6 +113,7 @@
     z-index: 10;
     font-size: 4rem;
     display: none;
+    will-change:auto;
 }
 
 .previous-btn {
@@ -139,6 +140,7 @@
     }
 .dot {
     display: none;
+    will-change: auto;
 }
 
 #skill .grid::-webkit-scrollbar {
@@ -157,6 +159,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     transition: all 0.25s;
     scroll-snap-align: center;
+    transform: scale(0.9);
 }
 .glass-bx:hover{
     transform: scale(1.005);
@@ -187,6 +190,7 @@
 .bar img{
     width: 1.5rem;
     aspect-ratio: 1/1;
+    will-change: auto;
 }
 
 .Technical-bars {
@@ -207,12 +211,14 @@
 
 .Technical-bars .bars .info {
     margin-bottom: 2rem;
+    will-change: auto;
 }
 
     .Technical-bars .bars .info span {
         font-weight: 500;
         animation: showText 0.5s 1s linear forwards;
         opacity: 0;
+        will-change: auto;
     }
 
 .progress-line {
@@ -227,6 +233,7 @@
 
 
     .progress-line span {
+        will-change: auto;
         height: 100%;
         background-color: cyan;
         position: absolute;
@@ -337,6 +344,7 @@
         position: relative;
         fill: transparent;
         align-content: center;
+        will-change: auto;
     }
 
         .radial-bars .radial-bar svg {
