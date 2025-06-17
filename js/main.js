@@ -126,12 +126,15 @@ carousal.addEventListener('scroll', () => {
 
     glassBoxes.forEach(box => {
         const rect = box.getBoundingClientRect();
+        box.classList.add('animate');
 
         // Check if the entire box is in horizontal view
         if (rect.left >= 0 && rect.right <= window.innerWidth) {
             box.classList.add('shrink');
+            box.classList.remove('animate');
         } else {
             box.classList.remove('shrink');
+            box.classList.add('animate');
         }
     });
 });

@@ -1,15 +1,5 @@
 @media (max-width: 767px) {
 
-    html {
-        scroll-snap-type: y mandatory;
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-    }
-
-    section {
-        scroll-snap-align: start;
-    }
-
     .left {
         max-width: 100vw;
         width: 100vw;
@@ -37,6 +27,7 @@
         background-image: none;
         color: none;
         background-clip: inherit;
+        -webkit-background-clip: inherit;
     }
 
     .button {
@@ -190,7 +181,6 @@
     }
     .model{
         width: 50vw;
-        height: 50vw;
     }
 
     /*========== ABOUT SECTION ==========*/
@@ -241,8 +231,14 @@
     #skills{
         justify-items: inherit;
     }
+    #skills ::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
     #skills section {
         flex-direction: column;
+    }
+    #skills section::-webkit-scrollbar{
+        display: none;
     }
 
     .Technical-bars {
@@ -273,11 +269,14 @@
         background-image: linear-gradient(45deg,#4facfe, #00f2fe);
         color: white;
         background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: white;
         border-radius: 50%;
     }
-    .dots.active{
-        color: transparent;
-    }
+        .dots.active {
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
 
     /*========== PROJECTS SECTION ==========*/
     #project {

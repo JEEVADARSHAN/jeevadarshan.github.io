@@ -163,6 +163,7 @@
 }
     .glass-bx span {
         background-clip: inherit;
+        -webkit-background-clip: inherit;
     }
 .bar {
     font-size: 0.8rem;
