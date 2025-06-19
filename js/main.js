@@ -33,7 +33,6 @@ if (!window.location.pathname.includes('about.html')) {
 
             object.traverse(function (child) {
                 if (child.isMesh) {
-                    // Apply gold material
                     child.material = new THREE.MeshStandardMaterial({
                         color: 0xFFD700,
                         metalness: 1.0,
@@ -44,11 +43,10 @@ if (!window.location.pathname.includes('about.html')) {
                 }
             });
 
-            // Animation loop using time-based increment
             function animate() {
                 requestAnimationFrame(animate);
-                const delta = clock.getDelta(); // Time between frames
-                object.rotation.z += delta * 0.5; // Rotate based on time delta for smooth animation
+                const delta = clock.getDelta();
+                object.rotation.z += delta * 0.5;
                 renderer.render(scene, camera);
             }
 
@@ -57,56 +55,51 @@ if (!window.location.pathname.includes('about.html')) {
             console.error("An error occurred while loading the model:", error);
         });
 
-        // Handle window resize
-        window.addEventListener('resize', onWindowResize);
-
-        function onWindowResize() {
+        window.addEventListener('resize', () => {
             renderer.setSize(container.clientWidth, container.clientHeight);
             camera.aspect = container.clientWidth / container.clientHeight;
             camera.updateProjectionMatrix();
-        }
+        });
     }
 
-    window.onload = initModel;
+    window.addEventListener('load', initModel);
 }
 
+// ================= Helper Functions ====================
+function throttle(callback, limit) {
+    let waiting = false;
+    return function () {
+        if (!waiting) {
+            callback.apply(this, arguments);
+            waiting = true;
+            setTimeout(() => (waiting = false), limit);
+        }
+    };
+}
 
 // ================= MENU ====================
-
 document.addEventListener('click', function (event) {
     const checkbox = document.querySelector('#navi-toggle');
     const menuContainer = document.querySelector('.menu');
 
     if (menuContainer.contains(event.target) && event.target.tagName === 'A') {
         checkbox.checked = false;
-        body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
     }
 });
+
 const checkbox = document.querySelector('#navi-toggle');
-const body = document.body;
-
 checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-        body.style.overflow = 'hidden';
-    } else {
-        body.style.overflow = 'auto';
-    }
+    document.body.style.overflow = checkbox.checked ? 'hidden' : 'auto';
 });
 
-
-
-// ================= Scroll ====================
+// ================= Scroll Navigation Highlight ====================
 document.addEventListener('DOMContentLoaded', () => {
     if (!window.location.pathname.includes('about.html')) {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.navbar a');
 
-        if (sections.length === 0 || navLinks.length === 0) {
-            console.warn("No sections or nav links found!");
-            return;
-        }
-
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', throttle(() => {
             let top = window.scrollY;
 
             sections.forEach(sec => {
@@ -116,31 +109,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (top >= offset && top < offset + height) {
                     navLinks.forEach(link => link.classList.remove('highlight'));
-
-                    const activeLink = document.querySelector('.navbar a[href*="' + id + '"]');
-                    if (activeLink) {
-                        activeLink.classList.add('highlight');
-                    }
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href').includes(id)) {
+                            link.classList.add('highlight');
+                        }
+                    });
                 }
             });
-        });
+        }, 100));
     }
 });
 
-
-
-
+// ================= Carousal Scroll Animation ====================
 window.addEventListener('load', () => {
     if (!window.location.pathname.includes('about.html')) {
         const carousal = document.querySelector('.carousal');
         if (carousal) {
             const glassBoxes = document.querySelectorAll('.glass-bx');
 
-            carousal.addEventListener('scroll', () => {
+            carousal.addEventListener('scroll', throttle(() => {
                 glassBoxes.forEach(box => {
                     const rect = box.getBoundingClientRect();
-                    box.classList.add('animate');
-
                     if (rect.left >= 0 && rect.right <= window.innerWidth) {
                         box.classList.add('shrink');
                         box.classList.remove('animate');
@@ -149,210 +138,143 @@ window.addEventListener('load', () => {
                         box.classList.add('animate');
                     }
                 });
-            });
+            }, 100));
         }
     }
 });
 
-
-
-
-
-
-// =================  Intersection Observer for Animations ====================
-
-
-const observer = new IntersectionObserver((entries, observer) => {
+// ================= Intersection Observer for Animations ====================
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+        const animationType = entry.target.getAttribute('data-animation');
         if (entry.isIntersecting) {
-            const animationType = entry.target.getAttribute('data-animation');
             entry.target.classList.add('in-view', animationType);
         } else {
-            entry.target.classList.remove('in-view', entry.target.getAttribute('data-animation'));
+            entry.target.classList.remove('in-view', animationType);
         }
     });
-}, {
-    threshold: 0.25 
-});
+}, { threshold: 0.25 });
 
-document.querySelectorAll('.animate').forEach((element) => {
-    observer.observe(element);
-});
-
-
+document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
 // ================= Progress Bar Animations ====================
-
-
 const progressBars = document.querySelectorAll('.progress-line');
 const radialBars = document.querySelectorAll('.radial-bar');
 
-
 const observer_graphs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-        } else {
-            entry.target.classList.remove('in-view');
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
     });
-}, {
-    threshold: 0.5
-});
+}, { threshold: 0.5 });
 
 progressBars.forEach(bar => observer_graphs.observe(bar));
 radialBars.forEach(bar => observer_graphs.observe(bar));
 
-
 // ================= Scroll Button ====================
+const scrollButton = document.getElementById("scrollToTopBtn");
 
+window.addEventListener('scroll', () => {
+    scrollButton.style.display = (window.scrollY > 20) ? "block" : "none";
+});
 
-let scrollButton = document.getElementById("scrollToTopBtn");
-
-window.onscroll = function () {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollButton.style.display = "block";
-    } else {
-        scrollButton.style.display = "none";
-    }
-};
-scrollButton.onclick = function () {
-    document.body.scrollTop = 0; 
-    document.documentElement.scrollTop = 0;
+scrollButton.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 // ================= Mail ====================
-
-
 function sendEmail(event) {
-    event.preventDefault();  // Prevent form from submitting the traditional way
-
-    // Get the form values
+    event.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    // Construct the mailto link with the form data
-    const mailtoLink = `mailto:jeevadarshan11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
-
-    // Redirect the user to the mailto link
+    const mailtoLink = `mailto:jeevadarshan11@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
     window.location.href = mailtoLink;
 }
 
-
-// ================= Serivces Select Button ====================
+// ================= Services Select Button ====================
+const serviceBtns = document.querySelectorAll('.btn-box-otl');
+const mechItems = document.querySelectorAll('.mech');
+const csItems = document.querySelectorAll('.cs');
 
 function toggleService(service, element) {
-    document.querySelectorAll('.btn-box-otl').forEach(btn => {
-        btn.classList.remove('clicked');
-    });
+    serviceBtns.forEach(btn => btn.classList.remove('clicked'));
     element.classList.add('clicked');
 
+    mechItems.forEach(item => item.classList.add('hidden'));
+    csItems.forEach(item => item.classList.add('hidden'));
 
-    const mech = document.querySelectorAll('.mech');
-    const cs = document.querySelectorAll('.cs');
-
-    mech.forEach(item => item.style.display = "none");
-    cs.forEach(item => item.style.display = "none");
-
-    setTimeout(() => {
-        if (service == 'all') {
-            mech.forEach(item => item.style.display = "block");
-            cs.forEach(item => item.style.display = "block");
-            const btn = document.querySelectorAll('.cs');
+    requestAnimationFrame(() => {
+        if (service === 'all') {
+            mechItems.forEach(item => item.classList.remove('hidden'));
+            csItems.forEach(item => item.classList.remove('hidden'));
+        } else if (service === 'mech') {
+            mechItems.forEach(item => item.classList.remove('hidden'));
+        } else if (service === 'cs') {
+            csItems.forEach(item => item.classList.remove('hidden'));
         }
-        else if (service == 'mech') {
-            mech.forEach(item => item.style.display = "block");
-        }
-        else if (service == 'cs') {
-            cs.forEach(item => item.style.display = "block");
-        }
-    }, 200); 
+    });
 }
 
 
-// ================= Skills carousal Button ====================
+// ================= Skills Carousal Button ====================
 window.addEventListener('load', () => {
     if (!window.location.pathname.includes('about.html')) {
-       const slide = document.querySelector('.carousal');
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.previous-btn');
-const items = document.querySelectorAll('.glass-bx');
-const dots = document.querySelectorAll('.dots');
+        const slide = document.querySelector('.carousal');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.previous-btn');
+        const items = document.querySelectorAll('.glass-bx');
+        const dots = document.querySelectorAll('.dots');
 
-let currentIndex = 0;
+        let currentIndex = 0;
 
-function updatechevron() {
-    const isDesktop = window.innerWidth >= 1024;
-    if (!isDesktop) {
-        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
-        nextBtn.style.display = currentIndex === items.length - 2 ? 'none' : 'block';
-        setTimeout(() => {
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }, 100);
-    } else {
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
-    }
-}
+        function updateChevron() {
+            const isDesktop = window.innerWidth >= 1024;
+            if (!isDesktop) {
+                prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+                nextBtn.style.display = currentIndex >= items.length - 2 ? 'none' : 'block';
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            } else {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            }
+        }
 
-
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < items.length - 2) {
-        currentIndex++;
-        slide.scrollBy({
-            left: slide.clientWidth,
-            behavior: 'smooth'
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < items.length - 2) {
+                currentIndex++;
+                slide.scrollBy({ left: slide.clientWidth, behavior: 'smooth' });
+                updateChevron();
+            }
         });
-        updatechevron();
-    }
-});
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        slide.scrollBy({
-            left: -slide.clientWidth,
-            behavior: 'smooth'
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                slide.scrollBy({ left: -slide.clientWidth, behavior: 'smooth' });
+                updateChevron();
+            }
         });
-        updatechevron();
+
+        slide.addEventListener('scroll', throttle(() => {
+            const newIndex = Math.round(slide.scrollLeft / slide.clientWidth);
+            if (newIndex !== currentIndex) {
+                currentIndex = newIndex;
+                updateChevron();
+            }
+        }, 100));
+
+        updateChevron();
     }
 });
-
-slide.addEventListener('scroll', () => {
-    const newIndex = Math.round(slide.scrollLeft / slide.clientWidth);
-    if (newIndex !== currentIndex) {
-        currentIndex = newIndex;
-        updatechevron();
-    }
-});
-
-updatechevron();
-}
-
-    }
-});
-
-
-
 
 // ================= Project Select Button ====================
-
 function toggleProject(project, element) {
-    document.querySelectorAll('.btn-box-otl.pj').forEach(btn => {
-        btn.classList.remove('clicked');
-    });
+    document.querySelectorAll('.btn-box-otl.pj').forEach(btn => btn.classList.remove('clicked'));
     element.classList.add('clicked');
-
 
     const mech = document.querySelectorAll('.project.mech');
     const cs = document.querySelectorAll('.project.cs');
@@ -360,17 +282,14 @@ function toggleProject(project, element) {
     mech.forEach(item => item.style.display = "none");
     cs.forEach(item => item.style.display = "none");
 
-    setTimeout(() => {
-        if (project == 'all') {
+    requestAnimationFrame(() => {
+        if (project === 'all') {
             mech.forEach(item => item.style.display = "block");
             cs.forEach(item => item.style.display = "block");
-            const btn = document.querySelectorAll('.project.cs');
-        }
-        else if (project == 'mech') {
+        } else if (project === 'mech') {
             mech.forEach(item => item.style.display = "block");
-        }
-        else if (project == 'cs') {
+        } else if (project === 'cs') {
             cs.forEach(item => item.style.display = "block");
         }
-    }, 200);
+    });
 }

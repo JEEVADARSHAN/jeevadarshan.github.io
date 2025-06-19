@@ -210,7 +210,7 @@ button {
     }
 
     #scrollToTopBtn:hover {
-        background-color: #0ef;
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
         transform: scale(1.25);
         color: black;
     }

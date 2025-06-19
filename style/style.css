@@ -71,7 +71,7 @@ section {
 
 @font-face {
     font-family: 'Tangerine';
-    src: url('../assets/other/Tangerine-Regular.ttf') format('truetype');
+    src: url('../fonts/Tangerine-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -154,5 +154,5 @@ section {
 
 .shrink {
     transition: all 1s;
-    transform: scale(0.8) !important;
+    transform: scale(0.8);
 }
