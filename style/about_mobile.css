@@ -1,0 +1,154 @@
+@media screen and (max-width: 768px) {
+    html {
+        scroll-snap-type: y none;
+    }
+    section {
+        scroll-snap-align: none;
+    }
+    /*  EDUCATION  */
+    .section-education {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-half {
+        position: relative;
+        width: 100%;
+        padding-top: 4rem;
+    }
+
+        .left-half.bg.bottom,
+        .left-half.bg.fixed {
+            visibility: hidden;
+        }
+
+    .right-half.white {
+        background-color: transparent;
+        margin-top: 0.25rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline-container {
+        margin: 1rem;
+        border-left: none;
+    }
+
+    .timeline-item {
+        padding-left: 0; /* Remove padding for left border */
+        margin-bottom: 0;
+        flex-direction: column; /* Stack items vertically */
+    }
+        .timeline-item::after {
+            height: 4rem;
+            background-image: linear-gradient(45deg,#4facfe, #00f2fe);
+            content: " ";
+            color: white;
+            width: 5px;
+            margin-bottom: 0;
+        }
+        .timeline-item::before {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #fff;
+            content: " ";
+            color: white;
+        }
+
+    .timeline-circle {
+        display: none; /* Remove circle on mobile */
+    }
+
+    .timeline-content {
+        padding-left: 10px; /* Reduce padding */
+        width: 100%; /* Ensure content takes full width */
+        box-shadow: none; /* Remove shadow for simplicity */
+        border-left: none; /* Remove left border */
+        border-top: 3px solid #007bff;
+    }
+
+    .timeline-logo img {
+        width: 80px; /* Smaller logo size for mobile */
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    .timeline-title {
+        font-size: 18px; /* Adjust font size for title */
+    }
+
+    .timeline-role {
+        font-size: 14px; /* Smaller font for role */
+    }
+
+    .timeline-highlights {
+        font-size: 12px; /* Smaller font for highlights */
+    }
+
+    .timeline-description {
+        font-size: 12px; /* Smaller font for description */
+    }
+
+
+
+    /*  EXPERIENCE  */
+
+    .tl-grid {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "two one "
+            "four three"
+            "six five"
+            "eight seven"
+            "ten nine";
+        gap: 10px;
+    }
+    
+    .line{
+        grid-column: 1;
+        grid-row: 1/ span 5;
+        height: 100%;
+        width: 5px;
+        z-index:1;
+    }
+
+    .tl-dt-top::before,
+    .tl-dt-bottom::after {
+        visibility: hidden;
+    }
+
+
+
+
+    /*  SKILL  */
+    #skill {
+        padding: 0.5rem;
+    }
+    .skill {
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    }
+    .child {
+        border-radius: 8px;
+    }
+    .child img {
+        object-fit: contain;
+        max-height: 80%;
+        max-width: 80%;
+        padding: 0rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

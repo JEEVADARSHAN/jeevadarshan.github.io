@@ -1,0 +1,162 @@
+.animate {
+    opacity: 0;
+    will-change: auto;
+}
+
+    .animate.in-view.slideRight {
+        animation: slideRight 1s ease forwards;
+    }
+
+    .animate.in-view.slideLeft {
+        animation: slideLeft 1s ease forwards;
+    }
+
+    .animate.in-view.slideTop {
+        animation: slideTop 1s ease forwards;
+    }
+
+    .animate.in-view.slideBottom {
+        animation: slideBottom 1s ease forwards;
+    }
+
+    .animate.in-view.showText {
+        animation: showText 0.5s linear forwards;
+    }
+
+    .animate.in-view.animate-bar {
+        animation: animate-bar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    }
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flow {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes movement{
+    0%{
+        transform:translateX(-5px);
+    }
+    50%{
+        transform:translateX(5px);
+    }
+    100%{
+       transform: translateX(-5px);
+    }
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate-bar {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: 50;
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: 175;
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: 125;
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: 75;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
