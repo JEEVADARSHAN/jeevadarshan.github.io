@@ -25,6 +25,7 @@
     .right-half.white {
         background-color: transparent;
         margin-top: 0.25rem;
+        width: 100%;
         margin: 0;
         padding: 0;
     }
