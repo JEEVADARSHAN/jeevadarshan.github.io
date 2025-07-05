@@ -16,6 +16,15 @@
     flex-direction: row;
     box-shadow: inset 50px -50px 100px #000b10, inset -50px 50px 100px #002b42;
 }
+    .home .right {
+        justify-items: center;
+    }
+    .home h1 {
+        font-size: 1.5rem;
+    }
+    .home .h3{
+        font-size: 1.2rem;
+    }
 
 /*========== ABOUT SECTION ==========*/
 #about {
@@ -55,7 +64,7 @@
         justify-items: center;
         z-index: 2;
         padding: 1rem;
-        transition: all 1s ease-in-out;
+        transition: all 0.5s ease-in-out;
         scroll-snap-align: center;
     }
 
@@ -118,7 +127,6 @@
     z-index: 10;
     font-size: 4rem;
     display: none;
-    will-change:auto;
 }
 
 .previous-btn {
@@ -145,7 +153,6 @@
     }
 .dot {
     display: none;
-    will-change: auto;
 }
 
 #skill .grid::-webkit-scrollbar {
@@ -192,7 +199,6 @@
 .bar img{
     width: 1.5rem;
     aspect-ratio: 1/1;
-    will-change: auto;
 }
 
 .Technical-bars {
@@ -213,14 +219,12 @@
 
 .Technical-bars .bars .info {
     margin-bottom: 2rem;
-    will-change: auto;
 }
 
     .Technical-bars .bars .info span {
         font-weight: 500;
         animation: showText 0.5s 1s linear forwards;
         opacity: 0;
-        will-change: auto;
     }
 
 .progress-line {
@@ -235,7 +239,6 @@
 
 
     .progress-line span {
-        will-change: auto;
         height: 100%;
         background-color: cyan;
         position: absolute;
@@ -347,7 +350,6 @@
         position: relative;
         fill: transparent;
         align-content: center;
-        will-change: auto;
     }
 
         .radial-bars .radial-bar svg {

@@ -1,6 +1,6 @@
 .animate {
     opacity: 0;
-    will-change: auto;
+    will-change: transform, opacity;
 }
 
     .animate.in-view.slideRight {

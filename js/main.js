@@ -1,31 +1,37 @@
-// ================= 3D Model with Three.js ====================
+//================= 3D MODEL ====================
 if (!window.location.pathname.includes('about.html')) {
-    function initModel() {
+    async function initModel() {
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        const fixedWidth = 320;
+        const fixedHeight = 240;
+
+        const camera = new THREE.PerspectiveCamera(75, 1.33, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({
             canvas: document.getElementById('modelCanvas'),
             alpha: true,
             antialias: true
         });
+
         const container = document.getElementById('model');
-        renderer.setSize(container.clientWidth, container.clientHeight);
+
+        renderer.setSize(fixedWidth, fixedHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.updateProjectionMatrix();
+
+        container.style.width = `${fixedWidth}px`;
+        container.style.height = `${fixedHeight}px`;
         container.appendChild(renderer.domElement);
 
         camera.position.set(0, 3, 8);
         camera.rotation.x = -Math.PI / 8;
 
-        const frontLight = new THREE.DirectionalLight(0xffffff, 1000, 100);
-        frontLight.position.set(0, 0, 9);
-        scene.add(frontLight);
-
-        const leftLight = new THREE.DirectionalLight(0xffffff, 1000, 100);
-        leftLight.position.set(-10, -1, 0);
-        scene.add(leftLight);
+        const cubeMap = await loadCubemapFromSingleImage('../assets/other/map.png', 512);
+        scene.environment = cubeMap;
 
         const clock = new THREE.Clock();
-
         const objLoader = new THREE.OBJLoader();
+
         objLoader.load('assets/3d_models/j.obj', function (object) {
             scene.add(object);
             object.position.set(0, -3, 2);
@@ -34,12 +40,12 @@ if (!window.location.pathname.includes('about.html')) {
             object.traverse(function (child) {
                 if (child.isMesh) {
                     child.material = new THREE.MeshStandardMaterial({
-                        color: 0xFFD700,
+                        color: 0xffcc88,
                         metalness: 1.0,
-                        roughness: 0.0,
+                        roughness: 0.17,
+                        envMap: cubeMap,
+                        envMapIntensity: 3
                     });
-                    child.material.opacity = 1.0;
-                    child.material.transparent = false;
                 }
             });
 
@@ -52,18 +58,69 @@ if (!window.location.pathname.includes('about.html')) {
 
             animate();
         }, undefined, function (error) {
-            console.error("An error occurred while loading the model:", error);
+            console.error("Error loading model:", error);
         });
+    }
 
-        window.addEventListener('resize', () => {
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
+    function loadCubemapFromSingleImage(url, faceSize = 512) {
+        return new Promise((resolve, reject) => {
+            const loader = new Image();
+            loader.crossOrigin = '';
+            loader.onload = function () {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = faceSize;
+                canvas.height = faceSize;
+
+                // Face layout:
+                const faceCoords = {
+                    'px': [0, 1], // +X (right)
+                    'nx': [2, 1], // -X (left)
+                    'py': [1, 0], // +Y (top)
+                    'ny': [1, 2], // -Y (bottom)
+                    'pz': [1, 1], // +Z (front)
+                    'nz': [3, 1]  // -Z (back)
+                };
+
+                const getFaceTexture = (x, y) => {
+                    ctx.clearRect(0, 0, faceSize, faceSize);
+                    ctx.drawImage(
+                        loader,
+                        x * faceSize, y * faceSize,
+                        faceSize, faceSize,
+                        0, 0,
+                        faceSize, faceSize
+                    );
+                    const faceCanvas = document.createElement('canvas');
+                    faceCanvas.width = faceSize;
+                    faceCanvas.height = faceSize;
+                    faceCanvas.getContext('2d').drawImage(canvas, 0, 0);
+                    return new THREE.CanvasTexture(faceCanvas);
+                };
+
+                const cubeTextures = [
+                    getFaceTexture(...faceCoords.px), // +X
+                    getFaceTexture(...faceCoords.nx), // -X
+                    getFaceTexture(...faceCoords.py), // +Y
+                    getFaceTexture(...faceCoords.ny), // -Y
+                    getFaceTexture(...faceCoords.pz), // +Z
+                    getFaceTexture(...faceCoords.nz)  // -Z
+                ];
+
+                const cube = new THREE.CubeTexture();
+                cube.images = cubeTextures.map(tex => tex.image);
+                cube.needsUpdate = true;
+                resolve(cube);
+            };
+            loader.onerror = reject;
+            loader.src = url;
         });
     }
 
     window.addEventListener('load', initModel);
 }
+
+
 
 // ================= Helper Functions ====================
 function throttle(callback, limit) {
