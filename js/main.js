@@ -1,5 +1,5 @@
 //================= 3D MODEL ====================
-if (!window.location.pathname.includes('about.html')) {
+if (!window.location.pathname.includes('about')) {
     async function initModel() {
         const scene = new THREE.Scene();
 
@@ -152,7 +152,7 @@ checkbox.addEventListener('change', function () {
 
 // ================= Scroll Navigation Highlight ====================
 document.addEventListener('DOMContentLoaded', () => {
-    if (!window.location.pathname.includes('about.html')) {
+    if (!window.location.pathname.includes('about')) {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.navbar a');
 
@@ -258,7 +258,7 @@ function toggleService(service, element) {
 
 // ================= Skills Carousal Button ====================
 window.addEventListener('load', () => {
-    if (!window.location.pathname.includes('about.html')) {
+    if (!window.location.pathname.includes('about')) {
         const slide = document.querySelector('.carousal');
         const nextBtn = document.querySelector('.next-btn');
         const prevBtn = document.querySelector('.previous-btn');

@@ -1,5 +1,7 @@
 /*  EDUCATION   */
-
+h1 span i {
+    vertical-align: text-top;
+}
 
 .section-education {
     position: relative;
