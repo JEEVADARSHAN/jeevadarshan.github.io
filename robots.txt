@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /assets/
+Allow: /assets/other/Portfolio.png
+
 Sitemap: https://jeevadarshan.github.io/sitemap.xml
