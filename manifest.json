@@ -1,0 +1,26 @@
+{
+  "name": "Jeevadarshan Portfolio",
+  "short_name": "Jeevadarshan",
+  "description": "Explore the dynamic portfolio of Jeevadarshan, a Mechanical Engineer showcasing projects, skills, and services.",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "background_color": "#081b29",
+  "theme_color": "#081b29",
+  "icons": [
+    {
+      "src": "assets/other/Portfolio.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/other/Portfolio.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
